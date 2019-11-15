@@ -1,0 +1,12 @@
+.col3-left {
+    /* padding-top: 20px; */
+    width: inherit;
+    height: 400px;
+    background-color: red;
+}
+
+.left-side {
+    background: pink;
+    width: 300px;
+    height: inherit;
+}
