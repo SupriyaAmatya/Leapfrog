@@ -1,0 +1,81 @@
+.whole-wrapper {
+    background-image: url("/images/background.png");
+    background-repeat: repeat-x;
+}
+
+.our-team-title {
+    text-align: center;
+    font: size 45pt;
+    padding: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.back-box,
+.front-box {
+    width: 271px;
+    height: 315px;
+}
+
+.back-box {
+    background-image: url("/images/back-image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.front-box {
+    position: absolute;
+    background-image: url("/images/green-image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+.front-box p {
+    color: white;
+    margin: 35px;
+}
+
+.front-box ul {
+    margin: 35px;
+}
+
+.front-box li {
+    float: left;
+    margin: 5px;
+}
+
+.block .user-name-box {
+    position: absolute;
+    background: url("/images/grey-button.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 37px;
+    bottom: -15px;
+    z-index: 20;
+}
+
+.user-name-box a {
+    text-align: center;
+    padding: 19px 67px;
+    color: white;
+    display: block;
+}
+
+.block:hover .user-name-box {
+    background: url("/images/red-button.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 37px;
+    bottom: -15px;
+    z-index: 20;
+}
+
+.block:hover .front-box {
+    display: block;
+    position: absolute;
+}

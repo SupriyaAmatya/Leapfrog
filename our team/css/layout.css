@@ -1,0 +1,19 @@
+/* .whole-wrapper {
+    width: 100%;
+} */
+
+.our-team-wrapper {
+    width: 1170px;
+    margin: auto;
+}
+
+.block {
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    margin-right: 29px;
+}
+
+.block:last-child {
+    margin-right: 0px;
+}
