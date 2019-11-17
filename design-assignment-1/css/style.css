@@ -1,7 +1,7 @@
     /* header-part */
     
     .header-top-wrapper {
-        background: url("/images/top-header.png");
+        background: url("../images/top-header.png");
         background-repeat: repeat-x;
     }
     
@@ -12,7 +12,7 @@
     }
     
     .header-navbar a.nav-item:hover {
-        background: url("/images/nav-btn.png");
+        background: url("../images/nav-btn.png");
         background-size: cover;
     }
     
@@ -87,7 +87,7 @@
     
     .client-name {
         width: inherit;
-        background: url("/images/client-say.png");
+        background: url("../images/client-say.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -98,7 +98,7 @@
     /* our team */
     
     .middle-body-wrapper {
-        background-image: url("/images/background.png");
+        background-image: url("../images/background.png");
         background-repeat: repeat-x;
     }
     
@@ -116,14 +116,14 @@
     }
     
     .back-box {
-        background-image: url("/images/back-image.png");
+        background-image: url("../images/back-image.png");
         background-repeat: no-repeat;
         background-size: contain;
     }
     
     .front-box {
         position: absolute;
-        background-image: url("/images/green-image.png");
+        background-image: url("../images/green-image.png");
         background-repeat: no-repeat;
         background-size: contain;
         top: 0;
@@ -148,7 +148,7 @@
     
     .block .user-name-box {
         position: absolute;
-        background: url("/images/grey-button.png");
+        background: url("../images/grey-button.png");
         background-repeat: no-repeat;
         background-size: cover;
         left: 37px;
@@ -164,7 +164,7 @@
     }
     
     .block:hover .user-name-box {
-        background: url("/images/red-button.png");
+        background: url("../images/red-button.png");
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
@@ -217,14 +217,14 @@
     }
     
     .happy-top ul li a {
-        background: url("/images/small-grey.png");
+        background: url("../images/small-grey.png");
         background-repeat: no-repeat;
         background-size: cover;
         padding: 10px 12px;
     }
     
     .happy-top ul a:hover {
-        background: url("/images/small-red.png");
+        background: url("../images/small-red.png");
         background-repeat: no-repeat;
     }
     /* footer */
@@ -234,7 +234,7 @@
     }
     
     .footer-top-wrapper {
-        background: url("/images/footer-background.png");
+        background: url("../images/footer-background.png");
         background-repeat: repeat-x;
         background-size: contain;
     }
@@ -281,7 +281,7 @@
     .white-arrow {
         padding-left: 20px;
         line-height: 25px;
-        background: url("/images/white-arrow.png");
+        background: url("../images/white-arrow.png");
         background-position: left;
         background-repeat: no-repeat;
     }
