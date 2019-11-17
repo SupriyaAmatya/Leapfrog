@@ -60,20 +60,20 @@
 
 .middle {
     float: left;
-    width: 580px;
+    max-width: 580px;
     margin-right: 20px;
 }
 
 .col3-inner-right {
     float: right;
-    width: 290px;
+    max-width: 290px;
 }
 
 
 /* our team */
 
 .our-team-wrapper {
-    width: 1174px;
+    max-width: 1174px;
     margin: 0 auto;
     padding: 0;
 }
@@ -81,7 +81,7 @@
 .block {
     position: relative;
     display: inline-block;
-    width: 260px;
+    max-width: 260px;
     margin-right: 29px;
 }
 
@@ -95,7 +95,7 @@
 .best-solution-container,
 .happy-clients-container,
 .footer-container {
-    width: 1174px;
+    max-width: 1174px;
     margin: 0 auto;
     padding: 0;
 }
