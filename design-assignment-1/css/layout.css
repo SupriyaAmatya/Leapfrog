@@ -48,7 +48,6 @@
 
 .col3-left {
     padding: 70px 0;
-    /* width: inherit; */
 }
 
 .left-container {
@@ -62,10 +61,7 @@
 .middle {
     float: left;
     width: 580px;
-}
-
-.middle ul li {
-    display: inline-block;
+    margin-right: 20px;
 }
 
 .col3-inner-right {
@@ -117,15 +113,29 @@
     padding-right: 0;
 }
 
-.footer-col-middle {
-    width: 270px;
-    float: left;
-    margin-left: 30px;
-}
-
 .footer-block {
     display: inline-block;
-    padding: 50px 0px;
+    padding: 22px 0px;
+}
+
+.footer-blog {
+    float: right;
+    padding: 22px 0;
+}
+
+.blog-holder {
+    display: inline-block;
+    padding-top: 23px;
+}
+
+.left {
+    float: left;
+    padding: 20px 0;
+}
+
+.right {
+    float: right;
+    padding: 20px 0;
 }
 
 
