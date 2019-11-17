@@ -1,0 +1,97 @@
+.container {
+    max-width: 79.1%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.logo-wrapper,
+.header-navbar {
+    display: inline-block;
+    padding: 20px 0px;
+}
+
+.header-navbar {
+    float: right;
+}
+
+.header-navbar ul li {
+    display: inline-block;
+}
+
+.about-header {
+    float: left;
+}
+
+.left-navbar {
+    float: right;
+}
+
+
+/* body */
+
+.project-slideshow-container,
+.slideshow2-container,
+.read-more-container {
+    margin: 25px 0;
+}
+
+.project-slider {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.prev,
+.col-left {
+    float: left;
+}
+
+.next,
+.col-right {
+    float: right;
+}
+
+.right-bottom ul li {
+    display: inline-block;
+}
+
+.block {
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    margin-right: 29px;
+    /* max-width: 16.25em;
+    margin-right: 1.8125em; */
+}
+
+.block:last-child {
+    margin-right: 0px;
+}
+
+
+/* -----------------FOOTER--------------------- */
+
+.footer-block {
+    display: inline-block;
+    padding: 22px 0px;
+}
+
+.footer-blog {
+    float: right;
+    padding: 22px 0;
+}
+
+.blog-holder {
+    display: inline-block;
+    padding-top: 23px;
+}
+
+.left {
+    float: left;
+    padding: 20px 0;
+}
+
+.right {
+    float: right;
+    padding: 20px 0;
+}
