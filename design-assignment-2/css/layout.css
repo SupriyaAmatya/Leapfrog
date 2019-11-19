@@ -4,6 +4,9 @@
     padding: 0em;
 }
 
+
+/* --------------------------HEADER------------------------------------- */
+
 .logo-wrapper,
 .header-navbar {
     display: inline-block;
@@ -27,7 +30,7 @@
 }
 
 
-/* body */
+/*----------------------------BODY------------------------------------- */
 
 .project-slideshow-container,
 .slideshow2-container,
@@ -99,7 +102,7 @@
 }
 
 
-/* -----------------FOOTER--------------------- */
+/* -------------------------------------FOOTER------------------------------------ */
 
 .footer-block {
     display: inline-block;

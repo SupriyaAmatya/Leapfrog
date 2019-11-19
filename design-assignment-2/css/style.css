@@ -10,10 +10,9 @@
     clear: both;
 }
 
-
-/* body {
+body {
     background: #f3f3f3;
-} */
+}
 
 .header-top-wrapper {
     background: url("../images/top-header.png");
@@ -73,7 +72,7 @@
 }
 
 
-/* body */
+/*------------------BODY-------------------- */
 
 .body-wrapper {
     background: #f3f3f3;
@@ -242,7 +241,7 @@
 }
 
 
-/* -------------------FOOTER-------------- */
+/* ------------------------FOOTER---------------------- */
 
 .footer-top-wrapper .container *,
 .footer-bottom-wrapper .container * {
@@ -332,7 +331,7 @@
 }
 
 
-/* ---------------------MEDIA QUERIES---------------- */
+/* -----------------------------MEDIA QUERIES----------------------- */
 
 @media only screen and (max-width: 1439) {
     .block:last-child {
