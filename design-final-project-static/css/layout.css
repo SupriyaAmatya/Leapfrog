@@ -1,0 +1,66 @@
+.container {
+    max-width: 73.125em;
+    margin: 0em auto;
+    padding: 0em;
+}
+
+.logo-wrapper,
+.menu-nav {
+    float: left;
+}
+
+.navbar-wrapper,
+.login-nav {
+    float: right;
+}
+
+.menu-nav .dropdown-menu {
+    display: none;
+}
+
+
+/* .site-search a {
+    display: block;
+    float: left;
+} */
+
+.enter-site {
+    float: left
+}
+
+.seller .seller-name {
+    float: left;
+}
+
+.seller .price {
+    float: right;
+}
+
+.item-image {
+    position: relative;
+}
+
+.item .item-image .top-icon {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    /* display: none; */
+    background: rgba(255, 255, 255, 0.902);
+    margin: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.middle-icon {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    display: none;
+}
+
+.left-icon,
+.right-icon {
+    float: left;
+    margin: 10px;
+}

@@ -1,0 +1,237 @@
+/* body {
+    background-image: url("../images/f.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+header {
+    background: url("../images/background-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.top-header {
+    /* background: gray; */
+    border-bottom: 2px solid rgba(225, 225, 225, 0.7);
+    padding: 20px 0;
+    /* line-height: 2.5em; */
+}
+
+.menu-nav li,
+.login-nav li {
+    display: inline-block;
+    color: white;
+}
+
+.menu-nav li {
+    margin-left: 39px;
+}
+
+.menu-nav {
+    padding: 12px 25px 12px 0;
+    border-right: 1px solid rgba(225, 225, 225, 0.7);
+}
+
+.login-nav {
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+.login-nav li {
+    padding-left: 20px;
+}
+
+.login-nav .basket-cart {
+    position: relative;
+    /* border-radius: 50%; */
+    /* padding: 0 5px; */
+    display: inline-block;
+}
+
+.login-nav .basket-cart .cart-number {
+    font-size: small;
+    background: #86919d;
+    width: 20px;
+    line-height: 23px;
+    border-radius: 18px;
+    position: absolute;
+    top: -2px;
+    left: 20px;
+    text-align: center;
+    padding: 0 2px;
+}
+
+.login-nav .login {
+    background: #2f8be6;
+    margin-left: 35px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.bottom-header {
+    width: 830px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.bottom-header h1 {
+    font-size: 62px;
+    font-weight: bold;
+}
+
+.bottom-header p {
+    font-size: 18px;
+    padding: 30px 0;
+}
+
+.product-btn {
+    display: inline-block;
+    background: #86919d;
+    cursor: pointer;
+    padding: 18px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.product-btn:hover {
+    background: #2f8be6;
+}
+
+.main-wrapper {
+    background: #f1f5f8;
+    /* background: blueviolet; */
+}
+
+.enter-site {
+    background: white;
+    padding: 25px;
+    border-right: 3px solid black;
+}
+
+.enter-site a {
+    color: #86919d;
+    font-size: 16px;
+}
+
+.filter {
+    margin: 20px 0;
+}
+
+.filter span {
+    float: left;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgb(162, 173, 184);
+    margin-right: 25px;
+    margin-top: 10px;
+}
+
+.filter-nav ul li {
+    display: inline-block;
+    background: #dae1e7;
+    padding: 11px 15px;
+    border-radius: 2px;
+}
+
+.filter-nav ul li a {
+    font-size: 14px;
+    color: rgb(69, 69, 69);
+}
+
+.filter-nav ul li:hover {
+    background: #2f8be6;
+}
+
+.item {
+    max-width: 23.125em;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 0px 0px rgba(218, 225, 231, 0.004);
+}
+
+.item .item-image figure img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.top-icon .download span,
+.top-icon .right-icon span {
+    margin-left: 8px;
+    font-size: 16px;
+    color: #212121;
+}
+
+.eye {
+    background: white;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.basket {
+    background: #2f8be6;
+    border-radius: 4px;
+    padding: 19px;
+}
+
+.item-image:hover {
+    background-color: rgba(33, 33, 33, 0.902);
+}
+
+.description .description-content {
+    padding: 15px 20px;
+}
+
+.description .description-content h3 {
+    padding: 20px 0;
+    color: rgb(33, 33, 33);
+    font-size: 18px;
+}
+
+.description .description-content p {
+    padding-bottom: 30px;
+    color: rgb(69, 69, 69);
+    font-size: 16px;
+    text-align: left;
+}
+
+.seller {
+    padding-top: 20px;
+    border-top: 1px dotted rgba(0, 0, 0, 0.102);
+}
+
+.seller-name figure {
+    margin-left: 5px;
+}
+
+.seller-name figure img {
+    border-radius: 4px;
+}
+
+.seller-name figure span {
+    font-size: 13px;
+    color: rgb(162, 173, 184);
+    margin: 8px;
+}
+
+.seller .price {
+    padding: 10px;
+    background: #f1f5f8;
+    color: rgb(134, 145, 157);
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
