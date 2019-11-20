@@ -14,78 +14,84 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="top-header clearfix ">
-                <figure class="logo-wrapper">
-                    <img src="images/logo.png" alt="logo">
-                </figure>
-                <div class="navbar-wrapper">
-                    <nav class="menu-nav">
-                        <ul>
-                            <li><a href="#">Home</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Home1</a></li>
-                                    <li><a href="#">Home2</a></li>
-                                    <li><a href="#">Home2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">All items</a></li>
-                            <li><a href="#">Freebies</a></li>
-                            <li><a href="#">Premium</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </nav>
-                    <nav class="login-nav">
-                        <ul>
-                            <li>
+        <div class="overlay">
+            <div class="container">
+                <div class="top-header clearfix ">
+                    <figure class="logo-wrapper">
+                        <img src="images/logo.png" alt="logo">
+                    </figure>
+                    <div class="navbar-wrapper">
+                        <nav class="menu-nav">
+                            <ul>
+                                <li class="home-menu">
+                                    <a href="#">Home</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Home1</a></li>
+                                        <li><a href="#">Home2</a></li>
+                                        <li><a href="#">Home222</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">All items</a></li>
+                                <li><a href="#">Freebies</a></li>
+                                <li><a href="#">Premium</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </nav>
+                        <nav class="login-nav">
+                            <ul>
+                                <li>
 
-                                <figure>
-                                    <a href="#"><img src="images/search-icon.png" alt="search-icon"></a>
-                                </figure>
+                                    <figure>
+                                        <a href="#"><img src="images/search-icon.png" alt="search-icon"></a>
+                                    </figure>
 
-                            </li>
-                            <li>
+                                </li>
+                                <li>
 
-                                <figure class="basket-cart">
-                                    <a href="#"><img src="images/basket-logo.png" alt="basket-icon"><span class="cart-number">0</span></a>
-                                </figure>
+                                    <figure class="basket-cart">
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket-icon"><span class="cart-number">0</span></a>
+                                    </figure>
 
-                            </li>
-                            <li class="login"><a href="#">LOGIN</a></li>
-                        </ul>
-                    </nav>
+                                </li>
+                                <li class="login"><a href="#">LOGIN</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-            <div class="bottom-header">
-                <div class="heading">
-                    <h1>Most Selective Market of Digital Products for Creatives.</h1>
-                    <p>
-                        Curated Design Resources to Energize Your Creat.
-                    </p>
-                </div>
-                <div class="product-btn">
-                    <a href="#">View All Products</a>
-                </div>
-                <div class="product-btn">
-                    <a href="#">See Our Pricing</a>
+                <div class="bottom-header">
+                    <div class="heading">
+                        <h1>Most Selective Market of Digital Products for Creatives.</h1>
+                        <p>
+                            Curated Design Resources to Energize Your Creat.
+                        </p>
+                    </div>
+                    <div class="product-btn">
+                        <a href="#">View All Products</a>
+                    </div>
+                    <div class="product-btn">
+                        <a href="#">See Our Pricing</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="main-wrapper">
-        <div class="container">
-            <div class="products-list">
-                njhjj
-                <nav class="site-search ">
-                    <div class="enter-site"><a href="#">Enter Site</a></div>
+    <div class="main-wrapper">
+        <div class="container clearfix">
+            <div class="products-list clearfix">
+                <div class="site-search ">
                     <div class="search-bar clearfix ">
                         <form action="#">
+                            <select>
+                                <option value="enter-site" selected>Enter site</option>
+                                <option value="enter-site" >Enter site1</option>
+                                <option value="enter-site" >Enter site2</option>
+                            </select>
                             <input type="text" placeholder="Search your keyword..." name="search">
                             <input type="submit" value="Search">
                         </form>
                     </div>
-                </nav>
+                </div>
                 <div class="filter clearfix">
                     <span>Filter by</span>
                     <nav class="filter-nav">
@@ -126,12 +132,14 @@
 
                         <div class="description">
                             <div class="description-content">
-                                <h3>Collector iOS Wireframe UI Kit</h3>
+                                <a href="#">
+                                    <h3>Collector iOS Wireframe UI Kit</h3>
+                                </a>
                                 <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
                                 <div class="seller clearfix">
                                     <div class="seller-name">
                                         <figure>
-                                            <img src="images/user-icon.png"><span>by <strong>Supriya Amatya</strong></span>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
                                         </figure>
 
                                     </div>
@@ -142,13 +150,81 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="loading">
+                    <figure>
+                        <img src="images/loading.png" alt="loading">
+                    </figure>
+                </div>
+            </div>
 
+            <div class="pricing-table-wrapper">
+                <div class="pricing-title">
+                    <h1>
+                        Our Pricing Plans
+                    </h1>
+                    <p>
+                        Select the pack that you would like the best.
+                    </p>
+                </div>
+                <div class="col3-table">
+                    <div class="price-block">
+                        <div class="block-title">
+                            <h1>Single</h1>
+                            <p>For individual creatives.</p>
+                        </div>
+                        <div class="monthly-price">
+                            $<span>89</span>/month
+                        </div>
+                        <div class="block-services">
+                            <ul>
+                                <li><a href="#">1 License</a></li>
+                                <li><a href="#">Content Editor</a></li>
+                                <li><a href="#">Fully Responsible</a></li>
+                                <li><a href="#">Custom Fontsets</a></li>
+                                <li><a href="#">Video Support</a></li>
+                                <li><a href="#">Fullscreen Cover</a></li>
+                                <li><a href="#">& more</a></li>
+                            </ul>
+                            <a href="#">
+                                <div class="purchase">Purchase</div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="signup-wrapper">
+        <div class="container">
+            <div class="center-container">
+                <div class="top-container">
+                    <h1>Join Us For Free</h1>
+                    <p>Subscribe to our free mailing list for freebies and more!</p>
+                </div>
+                <div class="down-container">
+                    <form action="#">
+                        <div class="email-container">
+                            <input type="email" placeholder="Enter your email...">
+                            <input type="submit" value="Sign Up">
+                            <p>We guarantee not yo spam you or share your information.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-wrapper">
+        <div class="container">
+            <div class="section-title">
+                <h1>Testimonials</h1>
+                <p>Our Customers have something to say about</p>
+            </div>
+        </div>
+    </div>
     <footer>
 
     </footer>

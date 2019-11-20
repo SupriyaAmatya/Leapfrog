@@ -14,15 +14,10 @@
     float: right;
 }
 
-.menu-nav .dropdown-menu {
-    display: none;
-}
-
-
-/* .site-search a {
-    display: block;
+.site-search {
     float: left;
-} */
+    margin-top: -30px;
+}
 
 .enter-site {
     float: left
@@ -63,4 +58,21 @@
 .right-icon {
     float: left;
     margin: 10px;
+}
+
+.pricing-table-wrapper {
+    margin-top: 20px;
+}
+
+.col3-table {
+    margin-top: 40px;
+}
+
+.testimonial-wrapper {
+    background: #f1f5f8;
+}
+
+.section-title {
+    text-align: center;
+    padding-top: 90px;
 }
