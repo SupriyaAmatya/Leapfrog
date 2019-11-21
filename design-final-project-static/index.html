@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digital Market</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 </head>
 
 <body>
@@ -18,18 +18,18 @@
             <div class="container">
                 <div class="top-header clearfix ">
                     <figure class="logo-wrapper">
-                        <img src="images/logo.png" alt="logo">
+                        <a href="#"><img src="images/logo.png" alt="logo"></a>
                     </figure>
                     <div class="navbar-wrapper">
                         <nav class="menu-nav">
-                            <ul>
+                            <ul class="main-menu">
                                 <li class="home-menu">
                                     <a href="#">Home</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Home1</a></li>
-                                        <li><a href="#">Home2</a></li>
-                                        <li><a href="#">Home222</a></li>
-                                    </ul>
+                                    <div class="dropdown-content">
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                    </div>
                                 </li>
                                 <li><a href="#">All items</a></li>
                                 <li><a href="#">Freebies</a></li>
@@ -78,20 +78,23 @@
 
     <div class="main-wrapper">
         <div class="container clearfix">
-            <div class="products-list clearfix">
-                <div class="site-search ">
-                    <div class="search-bar clearfix ">
-                        <form action="#">
-                            <select>
-                                <option value="enter-site" selected>Enter site</option>
-                                <option value="enter-site" >Enter site1</option>
-                                <option value="enter-site" >Enter site2</option>
-                            </select>
-                            <input type="text" placeholder="Search your keyword..." name="search">
-                            <input type="submit" value="Search">
-                        </form>
+            <div class="site-search clearfix">
+                <form action="#">
+                    <div class="input-box">
+                        <select>
+                            <option value="enter-site" >Enter site</option>
+                            <option value="enter-site" >Enter site1</option>
+                            <option value="enter-site" >Enter site2</option>
+                        </select>
+                        <div class="input-form clearfix"><input type="text" placeholder="Search your keyword..." name="search"></div>
+
+                        <input type="submit" value="Search">
                     </div>
-                </div>
+
+                </form>
+            </div>
+            <div class="products-list clearfix">
+
                 <div class="filter clearfix">
                     <span>Filter by</span>
                     <nav class="filter-nav">
@@ -112,20 +115,22 @@
                             <figure>
                                 <a href="#"><img src="images/ui-kit.png" alt="product"></a>
                             </figure>
-                            <div class="top-icon">
-                                <div class="download left-icon">
-                                    <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
                                 </div>
-                                <div class="like right-icon">
-                                    <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
-                                </div>
-                            </div>
-                            <div class="middle-icon">
-                                <div class="eye left-icon">
-                                    <a href=""><img src="images/eye.png" alt="eye-icon"></a>
-                                </div>
-                                <div class="basket right-icon">
-                                    <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,13 +155,394 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="loading">
-                    <figure>
-                        <img src="images/loading.png" alt="loading">
-                    </figure>
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/water-bottle.png" alt="water_bottle"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Water Bottle Mockup</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="free-price">
+                                        <span>Free</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/tshirt.png" alt="t_shirt"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>T-shirt Mockup PSD</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/van.png" alt="van"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-button">
+                            <ul>
+                                <li>
+                                    <a href='#'>
+                                        <div class="prev"></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <div class="next"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Van Mockup PSD - 6 Angles</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/kitchen-items.png" alt="kitchen_items"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Kitchen Items Mockups</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/template.png" alt="pp_template"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Powerpoint Templates - Free Sample</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/plastic-pouch.png" alt="plastic_pouch"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Plastic Pouch Packing Mockups</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/phoniex.png" alt="ui_kit"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>Phoniex Startup UI Kits- Free Sample</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-image">
+                            <figure>
+                                <a href="#"><img src="images/animals.png" alt="animals_icon"></a>
+                            </figure>
+                            <div class="mask-overlay">
+                                <div class="top-icon">
+                                    <div class="download left-icon">
+                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                    </div>
+                                    <div class="like right-icon">
+                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                    </div>
+                                </div>
+                                <div class="middle-icon">
+                                    <div class="eye left-icon">
+                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                    </div>
+                                    <div class="basket right-icon">
+                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-content">
+                                <a href="#">
+                                    <h3>71 Free Animals Icon</h3>
+                                </a>
+                                <p>Super clean, minimalistic, stylized mockup collection with awesome customization features and huge resolution</p>
+                                <div class="seller clearfix">
+                                    <div class="seller-name">
+                                        <figure>
+                                            <img src="images/user-icon.png" alt="user-image"><span>by <strong>Supriya Amatya</strong></span>
+                                        </figure>
+
+                                    </div>
+                                    <div class="price">
+                                        $<span>60.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="loading">
+                <figure>
+                    <img src="images/loading.png" alt="loading">
+                </figure>
             </div>
 
             <div class="pricing-table-wrapper">
@@ -175,7 +561,7 @@
                             <p>For individual creatives.</p>
                         </div>
                         <div class="monthly-price">
-                            $<span>89</span>/month
+                            <span class="dollar">$</span><span class="amount">89</span>/month
                         </div>
                         <div class="block-services">
                             <ul>
@@ -192,6 +578,58 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="price-block recommended">
+                        <div class="block-title">
+                            <div class="recommended-ribbion">
+
+                            </div>
+                            <h1>Studio</h1>
+                            <p>Great for small studios and agencies.</p>
+                        </div>
+                        <div class="monthly-price">
+                            <span class="dollar">$</span><span class="amount">189</span>/month
+                        </div>
+                        <div class="block-services">
+                            <ul>
+                                <li><a href="#">Design with Blocks</a></li>
+                                <li><a href="#">Instagram Moduler</a></li>
+                                <li><a href="#">Gallery Module</a></li>
+                                <li><a href="#">MailChimp Module</a></li>
+                                <li><a href="#">1 License</a></li>
+                                <li><a href="#">Content Editor</a></li>
+                                <li><a href="#">& more</a></li>
+                            </ul>
+                            <a href="#">
+                                <div class="purchase">Purchase</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="price-block">
+                        <div class="block-title">
+                            <h1>Business</h1>
+                            <p>Great for small studios and agencies.</p>
+                        </div>
+                        <div class="monthly-price">
+                            <span class="dollar">$</span><span class="amount">89</span>/month
+                        </div>
+                        <div class="block-services">
+                            <ul>
+                                <li><a href="#">Design with Blocks</a></li>
+                                <li><a href="#">Instagram Moduler</a></li>
+                                <li><a href="#">Gallery Module</a></li>
+                                <li><a href="#">MailChimp Module</a></li>
+                                <li><a href="#">1 License</a></li>
+                                <li><a href="#">Content Editor</a></li>
+                                <li><a href="#">& more</a></li>
+                            </ul>
+                            <a href="#">
+                                <div class="purchase">Purchase</div>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -204,15 +642,13 @@
                     <h1>Join Us For Free</h1>
                     <p>Subscribe to our free mailing list for freebies and more!</p>
                 </div>
-                <div class="down-container">
-                    <form action="#">
-                        <div class="email-container">
-                            <input type="email" placeholder="Enter your email...">
-                            <input type="submit" value="Sign Up">
-                            <p>We guarantee not yo spam you or share your information.</p>
-                        </div>
-                    </form>
-                </div>
+                <form action="#">
+                    <div class="email-container">
+                        <input type="email" placeholder="Enter your email...">
+                        <input type="submit" value="Sign Up">
+                        <p>We guarantee not yo spam you or share your information.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -223,10 +659,161 @@
                 <h1>Testimonials</h1>
                 <p>Our Customers have something to say about</p>
             </div>
+            <div class="testimonial-block-holder clearfix ">
+                <div class="customer-test clearfix">
+                    <div class="thoughts">
+                        <p>
+                            When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us.
+                        </p>
+                    </div>
+                    <div class="customer-info">
+                        <figure>
+                            <a href="#"><img src="images/customer.png" alt="customer_photo"></a>
+                        </figure>
+                        <div class="name">
+                            <a href="#"><strong>Hellen Keller</strong><br>
+                            <span class="dept">Senior UI/UX Designer</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-test clearfix">
+                    <div class="thoughts">
+                        <p>
+                            First, have a definite, clear practical ideal; a goal, an objective. Second, have the necessary means to achieve your ends; wisdom, money, materials, and methods. Third, adjust all your means to that end.
+                        </p>
+                    </div>
+                    <div class="customer-info">
+                        <figure>
+                            <a href="#"><img src="images/customer.png" alt="customer_photo"></a>
+                        </figure>
+                        <div class="name">
+                            <a href="#"><strong>Aristotler</strong><br>
+                            <span class="dept">Senior UI/UX Designer</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-test clearfix">
+                    <div class="thoughts">
+                        <p>
+                            I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.
+                        </p>
+                    </div>
+                    <div class="customer-info">
+                        <figure>
+                            <a href="#"><img src="images/customer.png" alt="customer_photo"></a>
+                        </figure>
+                        <div class="name">
+                            <a href="#"><strong>Marie Curie</strong><br>
+                            <span class="dept">Senior UI/UX Designer</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-test clearfix">
+                    <div class="thoughts">
+                        <p>
+                            When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us.
+                        </p>
+                    </div>
+                    <div class="customer-info">
+                        <figure>
+                            <a href="#"><img src="images/customer.png" alt="customer_photo"></a>
+                        </figure>
+                        <div class="name">
+                            <a href="#"><strong>Michael Jordan</strong><br>
+                            <span class="dept">Senior UI/UX Designer</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mockups-wrapper">
+            <div class="container">
+                <div class="center-container">
+                    <div class="top-container">
+                        <h1>Learn How to Create Your Own Mockups!</h1>
+                        <p>Download our free ebook and start making your own mockups in a few simple steps.</p>
+                    </div>
+                    <div class="down-container">
+                        <a href="#">Get your free Ebook now!</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <footer>
 
+    <footer>
+        <div class="top-footer-wrapper">
+            <div class="widgets-container container clearfix">
+                <div class="col digital-col">
+                    <h3>Digital</h3>
+                    <p>We're passionate about creating free and premium resources for professional community.</p>
+                    <p>Any questions? Email to info@digital.net</p>
+                </div>
+
+                <div class="col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col recent-post">
+                    <h3>Recent Posts</h3>
+                    <a href="#">
+                        <p>Tutorial: Isometric Actions and Icons in Illustrator</p>
+                        <span>12 Jan 2018</span>
+                    </a>
+                    <div class="sep"></div>
+                    <a href="#">
+                        <p>Where All Our Freebies Come From: True Story </p>
+                        <span>12 Jan 2017</span>
+                    </a>
+                </div>
+
+                <div class="col subscribe clearfix">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Sign up for our newsletter to receive the new releases directly to your inbox.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Your email address">
+                        <input type="submit" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-wrapper">
+            <div class="container bottom-footer clearfix">
+                <div class="copyright">
+                    <p>© Copyright 2018, Digital Market. All Rights Reserved. Designed by Niraj Thapa.</p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="images/fb-icon.png" alt="fb"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/twitter-icon.png" alt="twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/google-icon.png" alt="gplus"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/circle-icon.png" alt="pintrest"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/insta-icon.png" alt="insta"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 

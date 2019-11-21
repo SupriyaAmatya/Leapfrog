@@ -1,3 +1,13 @@
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 .container {
     max-width: 73.125em;
     margin: 0em auto;
@@ -15,20 +25,22 @@
 }
 
 .site-search {
+    margin-top: -42px;
     float: left;
-    margin-top: -30px;
-}
-
-.enter-site {
-    float: left
 }
 
 .seller .seller-name {
     float: left;
 }
 
-.seller .price {
+.seller .price,
+.seller .free-price {
     float: right;
+}
+
+.item,
+.price-block {
+    float: left;
 }
 
 .item-image {
@@ -68,11 +80,67 @@
     margin-top: 40px;
 }
 
+.signup-wrapper {
+    background: url("../images/joinus-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .testimonial-wrapper {
     background: #f1f5f8;
 }
 
 .section-title {
     text-align: center;
-    padding-top: 90px;
+    padding-top: 80px;
+}
+
+.customer-test {
+    width: 35.625em;
+    float: left;
+    margin-top: 45px;
+}
+
+.customer-info {
+    margin: 25px;
+}
+
+.customer-info .name {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.customer-test:nth-child(odd) {
+    margin-right: 30px;
+}
+
+.mockups-wrapper {
+    background-color: #ffffff;
+}
+
+.widgets-container {
+    padding: 66px 0;
+}
+
+.col {
+    width: 16.875em;
+    float: left;
+    margin-right: 30px;
+}
+
+.col:last-child {
+    margin-right: 0em;
+}
+
+.top-footer-wrapper {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.102);
+}
+
+.bottom-footer .copyright {
+    float: left;
+}
+
+.bottom-footer .social-media {
+    float: right;
 }
