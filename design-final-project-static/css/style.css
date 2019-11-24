@@ -456,7 +456,7 @@ header {
 }
 
 .block-services ul li {
-    background: url("/images/arrow.png");
+    background: url("../images/arrow.png");
     background-repeat: no-repeat;
     background-position: left;
     padding: 12px 0;
