@@ -20,7 +20,6 @@ function searchByName(array, name) {
     });
 }
 console.log('Search by name >>>');
-
 searchByName(fruits, 'apple');
 
 //search by key

@@ -1,0 +1,107 @@
+//mutation
+
+var a =[1,2,3,4,5]
+undefined
+
+var result =a.forEach(function(val,index){
+	console.log(index, val);
+	return val + 1;
+});
+
+console.log(result,a)
+VM305:1 undefined (5) [1, 2, 3, 4, 5]
+undefined
+
+var result =a.forEach(function(val,index,self){
+	self[index]= val + 1;
+});
+undefined
+
+console.log(result,a)
+VM355:1 undefined (5) [2, 3, 4, 5, 6]
+undefined
+
+------------------------------------------------------
+
+function example(param){
+	var arr= param.slice();
+	arr[1] = 10;
+return arr;
+}
+var oldArray = [1,2,3,4,5]
+var newArray = example(oldArray)
+
+console.log('oldArray' oldArray)
+console.log('newArray' newArray)
+
+---------------------------------------------------
+
+var array = [1,2,3,4,5]
+undefined
+var result = array.forEach(function(val, index){
+	console.log(index, val);
+	return val + 1;
+}
+);
+VM643:2 0 1
+VM643:2 1 2
+VM643:2 2 3
+VM643:2 3 4
+VM643:2 4 5
+undefined
+console.log('ForEach', result, value)
+VM744:1 Uncaught ReferenceError: value is not defined
+    at <anonymous>:1:32
+(anonymous) @ VM744:1
+var result = array.map(function(val, index){
+	console.log(index, val);
+	return val + 1;
+}
+);
+VM777:2 0 1
+VM777:2 1 2
+VM777:2 2 3
+VM777:2 3 4
+VM777:2 4 5
+undefined
+console.log('map', result, array);
+VM887:1 map (5) [2, 3, 4, 5, 6] (5) [1, 2, 3, 4, 5]
+undefined
+console.log(array === result);
+VM976:1 false
+undefined
+var result = array.map(function(val, index){
+	console.log(index, val);
+	return val * val;
+}
+);
+VM996:2 0 1
+VM996:2 1 2
+VM996:2 2 3
+VM996:2 3 4
+VM996:2 4 5
+undefined
+console.log('map', result, array);
+VM1004:1 map (5) [1, 4, 9, 16, 25] (5) [1, 2, 3, 4, 5]
+undefined
+console.log(result);
+VM1067:1 (5) [1, 4, 9, 16, 25]
+undefined
+
+---------------------------------------------------
+for( var i = 0; i<10 ; i++){
+	setTimeout(function(){
+	console.log(i);
+},1000);
+}
+10
+
+//IIFE
+
+for( var i = 0; i<10 ; i++){
+	setTimeout((function(i){
+	console.log(i);
+})(i),1000);
+}
+
+---------------------------------------------------
