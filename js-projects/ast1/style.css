@@ -39,7 +39,7 @@ body {
 #prevBtn {
     float: left;
     left: 0;
-    background: url("./images/back.png");
+    background: url("images/back.png");
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -47,7 +47,7 @@ body {
 #nextBtn {
     float: right;
     right: 0;
-    background: url("./images/next.png");
+    background: url("images/next.png");
     background-repeat: no-repeat;
     background-position: center center;
 }
