@@ -15,11 +15,28 @@ var imageCount = 0;
 var left = -(imageWidth * imageCount);
 var direction = 'left';
 
+// styleButton();
+
+// function styleButton() {
+//     prevButton.onmouseover = function() {
+//         prevButton.style.background = 'rgba(100,100,100,0.4)';
+//     }
+
+//     prevButton.onmouseleave = function() {
+//         prevButton.style.background = 'rgba(100,100,100,0)';
+//     }
+
+//     nextButton.onmouseover = function() {
+//         prevButton.style.background = 'rgba(0,0,0,0.5)';
+//     }
+// }
+
+
+
 function slide() {
     timer = setInterval(function() {
         if (direction === 'left') {
             left -= 10;
-            console.log(left);
             if (left < -(images.length - 1) * imageWidth) {
 
                 left = -(imageWidth * (imageCount - 1));
