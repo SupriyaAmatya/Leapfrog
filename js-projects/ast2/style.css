@@ -12,31 +12,21 @@ body {
     margin: 30px auto;
     position: relative;
     background: #ececec;
-    width: 50%;
-    /* border: 2px solid black; */
 }
 
 #carousel-image-wrapper {
     margin: 0;
     padding: 0;
     position: absolute;
+    float: left;
+    z-index: 10;
 }
 
 #carousel-image-wrapper img {
     float: left;
 }
 
-.btn {
-    width: 45px;
-    height: 100%;
-    text-align: center;
-    position: absolute;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-#prevBtn {
+.prevBtn {
     float: left;
     left: 0;
     background: url("images/back.png");
@@ -44,7 +34,7 @@ body {
     background-position: center center;
 }
 
-#nextBtn {
+.nextBtn {
     float: right;
     right: 0;
     background: url("images/next.png");
@@ -52,8 +42,8 @@ body {
     background-position: center center;
 }
 
-#prevBtn:hover,
-#nextBtn:hover {
+.prevBtn:hover,
+.nextBtn:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -65,14 +55,4 @@ body {
 
 .clearfix:after {
     clear: both;
-}
-
-@media (max-width: 768px) {
-    #carousel-container {
-        position: relative;
-        width: 80%;
-        height: 300px;
-        margin: 30px auto;
-        overflow: hidden;
-    }
 }

@@ -5,63 +5,159 @@ var images = document.getElementsByTagName('img');
 var prevButton = document.getElementById('prevBtn');
 var nextButton = document.getElementById('nextBtn');
 
-var imageWidth = 400;
+var indicatorDots = [];
+
+var imageWidth = 800;
+var imageHeigth = 400;
 var timer;
-
-carouselContainer.style.width = imageWidth + 'px';
-carouselWrapper.style.width = imageWidth * images.length + 'px';
-
-var imageCount = 0;
-var left = -(imageWidth * imageCount);
+var step = 10;
+var imageIndex = 0;
+var left = -(imageWidth * imageIndex);
 var direction = 'left';
 
-// styleButton();
+carouselContainer.style.width = imageWidth + 'px';
+carouselContainer.style.height = imageHeigth + 'px';
+carouselWrapper.style.width = imageWidth * images.length + 'px';
 
-// function styleButton() {
-//     prevButton.onmouseover = function() {
-//         prevButton.style.background = 'rgba(100,100,100,0.4)';
+for (var i = 0; i < images.length; i++) {
+    indicatorDots[i] = document.createElement('div');
+    indicatorDots[i].style.position = 'absolute';
+    indicatorDots[i].style.width = '20px';
+    indicatorDots[i].style.height = '20px';
+    indicatorDots[i].style.borderRadius = '50%';
+    indicatorDots[i].style.background = 'black';
+    indicatorDots[i].style.left = 400 + (i * 30) + 'px';
+    indicatorDots[i].style.bottom = '2px';
+
+    carouselContainer.appendChild(indicatorDots[i]);
+}
+
+function setIndicatorDots() {
+    indicatorDots.onclick = showCurrentSLide();
+}
+
+
+nextButton.onclick = showNext;
+prevButton.onclick = showPrev;
+
+// function slideShow() {
+//     timer = setInterval(slideNext(), 20);
+//     timer;
+
+//     function slideNext() {
+//         // debugger;
+//         console.log(images.length);
+//         if (imageIndex === images.length - 1) {
+//             imageIndex = 0;
+//             moverRight(0);
+//         } else {
+//             left = -(imageWidth * imageIndex);
+//             imageIndex++;
+//             console.log(imageIndex);
+
+//             moveLeft(left);
+//         }
 //     }
 
-//     prevButton.onmouseleave = function() {
-//         prevButton.style.background = 'rgba(100,100,100,0)';
+//     function moveLeft(left) {
+//         var nextTimer = setInterval(function() {
+//             if (direction === 'left') {
+//                 left -= step;
+//                 if (imageIndex == images.length - 1) {
+//                     left = 0;
+//                 }
+//             } else {
+//                 console.log(imageIndex);
+//             }
+//             carouselWrapper.style.left = left + 'px';
+
+//             if (left % imageWidth == 0) {
+//                 //slide delay
+//                 clearInterval(nextTimer);
+//                 setTimeout(slideShow, 2000);
+//             }
+//         }, 15)
 //     }
 
-//     nextButton.onmouseover = function() {
-//         prevButton.style.background = 'rgba(0,0,0,0.5)';
+//     function moverRight(left) {
+//         direction = 'right';
+//         var prevTimer = setInterval(function() {
+//             left += step;
+//             carouselWrapper.style.left = left + 'px';
+
+//         }, 15)
+//         if (left < -(imageWidth * imageIndex)) {
+//             prevTimer;
+//         } else {
+//             clearInterval(prevTimer);
+//         }
 //     }
 // }
 
 
+function showNext() {
 
-function slide() {
-    timer = setInterval(function() {
-        if (direction === 'left') {
-            left -= 10;
-            if (left < -(images.length - 1) * imageWidth) {
-
-                left = -(imageWidth * (imageCount - 1));
-            }
-        } else {
-            left += 10;
-            if (left >= 0) {
-                direction = 'left';
-            }
+    // debugger;
+    direction = 'left';
+    var nextTimer = setInterval(function() {
+        // debugger;
+        console.log(imageIndex);
+        left -= step;
+        if (imageIndex > images.length - 1) {
+            // if (left < -(images.length - 0) * imageWidth) {
+            left = 0;
         }
-
         carouselWrapper.style.left = left + 'px';
-        imageCount++;
-
-        if (left >= -(imageWidth * imageCount)) {
-            imageCount = 0;
-        }
-        // console.log('left after>> ', left);
         if (left % imageWidth == 0) {
             //slide delay
-
-            clearInterval(timer);
-            setTimeout(slide, 2000);
+            clearInterval(nextTimer);
+            setTimeout(showNext, 2000);
         }
-    }, 20);
+    }, 15);
+    imageIndex++;
 }
 
-slide();
+function showPrev() {
+    direction = 'right';
+    var prevTimer = setInterval(function() {
+        left += step;
+        carouselWrapper.style.left = left + 'px';
+        imageIndex++;
+
+        if (left >= -(imageWidth * imageIndex)) {
+            imageIndex = 0;
+        } else {
+            clearInterval(prevTimer);
+
+        }
+    }, 15)
+}
+
+
+function slideShow() {
+
+    timer = setInterval(function() {
+        if (direction === 'left') {
+            console.log(imageIndex);
+            left -= step;
+            if (imageIndex > images.length - 1) {
+                imageIndex = 0;
+                left = 0;
+            }
+        } else {
+            left += step;
+            if (left < -(imageWidth * imageIndex))
+                direction = 'left';
+        }
+        carouselWrapper.style.left = left + 'px';
+
+        if (left % imageWidth == 0) {
+            //slide delay
+            clearInterval(timer);
+            setTimeout(slideShow, 2000);
+        }
+    }, 20);
+    imageIndex++;
+}
+
+slideShow();
