@@ -7,8 +7,8 @@ function Box(parentElement) {
     this.parentElement = parentElement;
     var that = this;
     // var speed = 2;
-    this.dx = 5;
-    this.dy = 5;
+    this.dx = 10;
+    this.dy = 10;
 
     this.init = function() {
         var box = document.createElement('div');
@@ -19,11 +19,10 @@ function Box(parentElement) {
         box.style.backgroundSize = 'contain';
         box.style.backgroundRepeat = 'no-repeat';
         box.style.position = 'absolute';
-        // box.style.top = '0px';
-        // box.style.left = '0px';
         this.parentElement.appendChild(box);
         this.element = box;
-        // this.element.onclick = this.boxClicked.bind(this);
+        this.element.onclick = that.antKilled;
+
         this.draw();
 
         return this;
@@ -53,10 +52,10 @@ function Box(parentElement) {
         this.y = y;
     }
 
-    // this.boxClicked = function() {
-    //     this.element.style.display = 'none';
-    //     console.log('gone');
-    // }
+    this.antKilled = function(event) {
+        var targetValue = event.target;
+        parentElement.removeChild(targetValue);
+    }
 
     this.checkCollision = function(boxes) {
         for (var i = 0; i < boxes.length; i++) {
@@ -86,7 +85,7 @@ function Game(parentElement, boxCount) {
 
     this.startGame = function() {
 
-        for (var i = 0; i <= this.boxCount; i++) {
+        for (var i = 0; i < this.boxCount; i++) {
             var box = new Box(parentElement).init();
 
             var boxPosX = getRandomArbitrary(0, MAX_WIDTH - box.width);
@@ -111,11 +110,11 @@ function Game(parentElement, boxCount) {
     }
 
     this.moveBoxes = function() {
-        for (var i = 0; i <= this.boxCount; i++) {
+        for (var i = 0; i < this.boxCount; i++) {
             boxes[i].move(MAX_WIDTH, MAX_HEIGHT);
             boxes[i].checkCollision(boxes);
         }
     }
 }
 var parentElement = document.getElementById('container');
-new Game(parentElement, 10).startGame();
+new Game(parentElement, 15).startGame();
