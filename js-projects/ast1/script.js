@@ -40,60 +40,6 @@ function setIndicatorDots() {
 nextButton.onclick = showNext;
 prevButton.onclick = showPrev;
 
-// function slideShow() {
-//     timer = setInterval(slideNext(), 20);
-//     timer;
-
-//     function slideNext() {
-//         // debugger;
-//         console.log(images.length);
-//         if (imageIndex === images.length - 1) {
-//             imageIndex = 0;
-//             moverRight(0);
-//         } else {
-//             left = -(imageWidth * imageIndex);
-//             imageIndex++;
-//             console.log(imageIndex);
-
-//             moveLeft(left);
-//         }
-//     }
-
-//     function moveLeft(left) {
-//         var nextTimer = setInterval(function() {
-//             if (direction === 'left') {
-//                 left -= step;
-//                 if (imageIndex == images.length - 1) {
-//                     left = 0;
-//                 }
-//             } else {
-//                 console.log(imageIndex);
-//             }
-//             carouselWrapper.style.left = left + 'px';
-
-//             if (left % imageWidth == 0) {
-//                 //slide delay
-//                 clearInterval(nextTimer);
-//                 setTimeout(slideShow, 2000);
-//             }
-//         }, 15)
-//     }
-
-//     function moverRight(left) {
-//         direction = 'right';
-//         var prevTimer = setInterval(function() {
-//             left += step;
-//             carouselWrapper.style.left = left + 'px';
-
-//         }, 15)
-//         if (left < -(imageWidth * imageIndex)) {
-//             prevTimer;
-//         } else {
-//             clearInterval(prevTimer);
-//         }
-//     }
-// }
-
 
 function showNext() {
 
