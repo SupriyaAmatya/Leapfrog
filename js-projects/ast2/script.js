@@ -15,8 +15,8 @@ function ImageCarousel(imageWidth, imageHeight, holdTime) {
     var direction = 'left';
 
     this.automaticSlide = automaticSlide();
-    // this.addPrevButton;
-    // this.addNextButton;
+    this.addPrevButton;
+    this.addNextButton;
 
     carouselContainer.style.width = imageWidth + 'px';
     carouselContainer.style.height = imageHeight + 'px';
@@ -77,68 +77,4 @@ function ImageCarousel(imageWidth, imageHeight, holdTime) {
 }
 
 var imageCarousel1 = new ImageCarousel(800, 400, 2000);
-imageCarousel1.addNextButton();
-// var imageCarousel2 = new ImageCarousel(800, 400, 5000);
-
-
-
-
-// for (var i = 0; i < images.length; i++) {
-//     indicatorDots[i] = document.createElement('div');
-//     indicatorDots[i].style.position = 'absolute';
-//     indicatorDots[i].style.width = '20px';
-//     indicatorDots[i].style.height = '20px';
-//     indicatorDots[i].style.borderRadius = '50%';
-//     indicatorDots[i].style.background = 'black';
-//     indicatorDots[i].style.left = 400 + (i * 30) + 'px';
-//     indicatorDots[i].style.bottom = '2px';
-
-//     carouselContainer.appendChild(indicatorDots[i]);
-// }
-
-// function setIndicatorDots() {
-//     indicatorDots.onclick = showCurrentSLide();
-// }
-
-
-// nextButton.onclick = showNext;
-// prevButton.onclick = showPrev;
-
-
-// function showNext() {
-
-//     // debugger;
-//     direction = 'left';
-//     var nextTimer = setInterval(function() {
-//         // debugger;
-//         left -= step;
-//         if (imageIndex == images.length - 1) {
-//             // if (left < -(images.length - 0) * imageWidth) {
-//             left = 0;
-//         }
-//         carouselWrapper.style.left = left + 'px';
-//         imageIndex++;
-
-//         if (left >= -(imageWidth * imageIndex)) {
-//             imageIndex = 0;
-//         } else {
-//             clearInterval(nextTimer);
-//         }
-//     }, 15);
-// }
-
-// function showPrev() {
-//     direction = 'right';
-//     var prevTimer = setInterval(function() {
-//         left += step;
-//         carouselWrapper.style.left = left + 'px';
-//         imageIndex++;
-
-//         if (left >= -(imageWidth * imageIndex)) {
-//             imageIndex = 0;
-//         } else {
-//             clearInterval(prevTimer);
-
-//         }
-//     }, 15)
-// }
+// imageCarousel1.addNextButton();

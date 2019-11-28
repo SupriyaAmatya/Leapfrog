@@ -47,12 +47,12 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: "";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
+@media (max-width: 768px) {
+    #carousel-container {
+        position: relative;
+        width: 80%;
+        height: 300px;
+        margin: 30px auto;
+        overflow: hidden;
+    }
 }
