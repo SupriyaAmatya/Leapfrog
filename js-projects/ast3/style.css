@@ -12,3 +12,12 @@
     margin: 20px auto;
     border: 2px solid #ad753a;
 }
+
+.box-container {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background: #ececec;
+    margin: 20px auto;
+    border: 2px solid #ad753a;
+}

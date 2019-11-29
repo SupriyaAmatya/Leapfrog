@@ -119,3 +119,6 @@ function Game(parentElement, boxCount) {
 }
 var parentElement = document.getElementById('container');
 new Game(parentElement, 15).startGame();
+
+var boxContainer = document.getElementById('box-container');
+new Game(boxContainer, 5).startGame();
