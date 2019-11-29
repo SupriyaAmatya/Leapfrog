@@ -53,8 +53,8 @@ function Box(parentElement) {
     }
 
     this.antKilled = function(event) {
-        var targetValue = event.target;
-        parentElement.removeChild(targetValue);
+        var clickedAnt = event.target;
+        parentElement.removeChild(clickedAnt);
     }
 
     this.checkCollision = function(boxes) {
@@ -82,6 +82,7 @@ function Game(parentElement, boxCount) {
     var MAX_HEIGHT = 600;
     this.parentElement = parentElement;
     this.boxCount = boxCount;
+    var that = this;
 
     this.startGame = function() {
 
