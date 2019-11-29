@@ -8,7 +8,7 @@ function Box(parentElement) {
     var that = this;
     // var speed = 2;
     this.dx = 10;
-    this.dy = 10;
+    this.dy = -10;
 
     this.init = function() {
         var box = document.createElement('div');
