@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.game-container {
+    margin: 30px auto;
+    position: relative;
+    width: 540px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.game-container .road {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: url('images/road1.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    position: absolute;
+}

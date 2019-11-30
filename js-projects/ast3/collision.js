@@ -78,8 +78,8 @@ function getRandomArbitrary(min, max) {
 function Game(parentElement, boxCount) {
 
     var boxes = [];
-    var MAX_WIDTH = 900;
-    var MAX_HEIGHT = 600;
+    var MAX_WIDTH = parentElement.offsetWidth;
+    var MAX_HEIGHT = parentElement.offsetHeight;
     this.parentElement = parentElement;
     this.boxCount = boxCount;
     var that = this;
@@ -111,6 +111,7 @@ function Game(parentElement, boxCount) {
     }
 
     this.moveBoxes = function() {
+        console.log(MAX_WIDTH);
         for (var i = 0; i < this.boxCount; i++) {
             boxes[i].move(MAX_WIDTH, MAX_HEIGHT);
             boxes[i].checkCollision(boxes);

@@ -6,10 +6,10 @@
 
 .container {
     position: relative;
-    width: 900px;
+    width: 50%;
     height: 600px;
     background: #ececec;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 2px solid #ad753a;
 }
 
