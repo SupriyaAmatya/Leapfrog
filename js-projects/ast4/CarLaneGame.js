@@ -1,3 +1,7 @@
+var score = 0;
+var enemyCarSpeed = 5;
+var counter = 0;
+
 function MyCar(parentElement) {
     this.element = null;
     this.width = 100;
@@ -74,7 +78,7 @@ function EnemyCar(parentElement) {
     }
 
     this.move = function() {
-        this.carTop += 5;
+        this.carTop += enemyCarSpeed;
         this.element.style.top = this.carTop + 'px';
     }
 
@@ -91,7 +95,7 @@ function Game() {
     var move = 0;
     var that = this;
     var interval;
-    var score = 0;
+
     var enemyCars = [];
 
     var gameOver;
@@ -150,7 +154,7 @@ function Game() {
             }
         });
 
-        interval = setInterval(that.gameLoop, 1000 / 100);
+        interval = setInterval(that.gameLoop, 10);
     }
 
     this.gameLoop = function() {
@@ -162,6 +166,23 @@ function Game() {
     this.moveRoad = function() {
         move += 5;
         road.style.backgroundPositionY = move + 'px';
+
+        counter++;
+
+        //speeding up
+        if (counter == 2000) {
+            enemyCarSpeed += 1;
+        }
+        if (counter == 4000) {
+            enemyCarSpeed += 2;
+        }
+        if (counter == 8000) {
+            enemyCarSpeed += 4;
+        }
+        if (counter == 10000) {
+            enemyCarSpeed += 5;
+        }
+
     }
 
     this.generateObstacles = function() {
@@ -173,7 +194,6 @@ function Game() {
         //move enemy cars
         for (var i = 0; i < enemyCars.length; i++) {
             enemyCars[i].move();
-
             //updating score
             if (enemyCars[i].carTop >= 600) {
                 enemyCars[i].destroyCar();
@@ -181,7 +201,6 @@ function Game() {
                 score += 1;
                 this.scoreTrack.innerHTML = 'Score<br>' + score;
             }
-
         }
     }
 
