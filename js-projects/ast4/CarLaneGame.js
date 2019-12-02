@@ -1,6 +1,6 @@
-var score = 0;
 var enemyCarSpeed = 5;
 var counter = 0;
+var that = this;
 
 function MyCar(parentElement) {
     this.element = null;
@@ -35,12 +35,46 @@ function MyCar(parentElement) {
 
     this.shiftPosition = function(left) {
         that.left += left;
+
+        // console.log('left>>', that.left);
         this.element.style.left = that.left + 'px';
     }
 
     this.destroyMyCar = function(gameContainer) {
         gameContainer.removeChild(this.element);
         // console.log(this.element);
+    }
+}
+
+function Bullet(myCar) {
+    this.element = document.createElement('div');
+
+    this.bulletLeft = myCar.left + 35;
+    this.bulletTop = myCar.top - 35;
+    var bulletWidth = 30;
+    var bulletHeight = 30;
+
+    this.createBullet = function(parentElement) {
+        this.parentElement = parentElement
+        console.log('bullet');
+        // this.element = bullet;
+        this.element.style.width = bulletWidth + 'px';
+        this.element.style.height = bulletHeight + 'px';
+        this.element.style.background = 'blue';
+        this.element.style.position = 'absolute';
+        this.element.style.left = this.bulletLeft + 'px';
+        this.element.style.top = this.bulletTop + 'px';
+
+        this.parentElement.appendChild(this.element);
+    }
+
+    this.move = function() {
+        this.bulletTop -= 5;
+        this.element.style.top = this.bulletTop + 'px';
+    }
+
+    this.removeBullet = function(parentElement) {
+        parentElement.removeChild(this.element);
     }
 }
 
@@ -98,7 +132,11 @@ function Game() {
 
     var enemyCars = [];
 
+    var score = 0;
     var gameOver;
+
+    var bullet;
+    var bulletArray = [];
 
     this.init = function() {
         gameContainer = document.getElementById('game-container');
@@ -130,17 +168,17 @@ function Game() {
         gameContainer.appendChild(this.scoreTrack);
 
         this.startBtn.onclick = function() {
-            that.startBtn.style.display = 'none';
+            gameContainer.removeChild(that.startBtn);
             that.scoreTrack.style.display = 'block';
-            myCar = new MyCar(gameContainer).init();
-            myCar.draw(); //setting initial position of player car.
+
             that.startGame();
         }
 
     }
 
     this.startGame = function() {
-
+        myCar = new MyCar(gameContainer).init();
+        myCar.draw(); //setting initial position of player car.
         road = document.getElementsByClassName('road')[0];
 
         document.addEventListener('keydown', function(event) {
@@ -152,14 +190,23 @@ function Game() {
             if (event.keyCode === 39 && myCar.left != 360) {
                 myCar.shiftPosition(140); // left = 360
             }
+
+            if (event.keyCode == 32) {
+                bullet = new Bullet(myCar);
+                bulletArray.push(bullet);
+                bullet.createBullet(gameContainer);
+            }
         });
 
         interval = setInterval(that.gameLoop, 10);
     }
 
     this.gameLoop = function() {
+        that.moveBullet();
         that.moveRoad();
         that.generateObstacles();
+
+        that.updateScore();
         that.checkCollision();
     }
 
@@ -195,28 +242,61 @@ function Game() {
         for (var i = 0; i < enemyCars.length; i++) {
             enemyCars[i].move();
             //updating score
+
+            // if (enemyCars[i].carTop >= 600) {
+            //     enemyCars[i].destroyCar();
+            //     enemyCars.splice(i, 1);
+            //     score++;
+            //     this.scoreTrack.innerHTML = 'Score<br>' + score;
+            // }
+        }
+    }
+
+    this.updateScore = function() {
+        for (var i = 0; i < enemyCars.length; i++) {
             if (enemyCars[i].carTop >= 600) {
                 enemyCars[i].destroyCar();
                 enemyCars.splice(i, 1);
-                score += 1;
+                score++;
                 this.scoreTrack.innerHTML = 'Score<br>' + score;
             }
+        }
+    }
+
+    this.moveBullet = function() {
+        for (var i = 0; i < bulletArray.length; i++) {
+            bulletArray[i].move();
         }
     }
 
     this.checkCollision = function() {
         var myCarLeft = myCar.left;
         var myCarTop = myCar.top;
-        // console.log(enemyCars);
 
         for (i = 0; i < enemyCars.length; i++) {
+            // console.log(enemyCars[i].carLeft);
             if (myCarLeft + myCar.width > enemyCars[i].carLeft && myCarLeft < enemyCars[i].carLeft + 100 &&
                 myCarTop + myCar.height > enemyCars[i].carTop && myCarTop < enemyCars[i].carTop + 100) {
-                // console.log('over');
+
                 clearInterval(interval);
                 that.gameOver();
             }
+            for (var j = 0; j < bulletArray.length; j++) {
+                if (bulletArray[j].bulletLeft + 30 >= enemyCars[i].carLeft && bulletArray[j].bulletLeft <= enemyCars[i].carLeft + 100 &&
+                    bulletArray[j].bulletTop + 30 >= enemyCars[i].carTop && bulletArray[j].bulletTop <= enemyCars[i].carTop + 100) {
+                    console.log('destroy');
+                    enemyCars[i].destroyCar();
+                    enemyCars.splice(i, 1);
+
+                    bulletArray[j].removeBullet(gameContainer);
+                    bulletArray.splice(j, 1);
+                }
+            }
+
+
         }
+
+
     }
 
     this.gameOver = function() {
@@ -232,13 +312,13 @@ function Game() {
         this.gameOverTxt.style.color = '#9afffb';
         gameOver.appendChild(this.gameOverTxt);
 
-        this.currentScore = document.createElement('h2');
-        this.currentScore.innerHTML = 'Score: ' + score;
-        this.currentScore.style.textAlign = 'center';
-        this.currentScore.style.fontWeight = 'lighter';
-        this.currentScore.style.margin = '4% auto';
-        this.currentScore.style.color = '#9afffb';
-        gameOver.appendChild(this.currentScore);
+        this.currentScoreTxt = document.createElement('h2');
+        this.currentScoreTxt.innerHTML = 'Score: ' + score;
+        this.currentScoreTxt.style.textAlign = 'center';
+        this.currentScoreTxt.style.fontWeight = 'lighter';
+        this.currentScoreTxt.style.margin = '4% auto';
+        this.currentScoreTxt.style.color = '#9afffb';
+        gameOver.appendChild(this.currentScoreTxt);
 
         this.playAgainBtn = document.createElement('button');
         this.playAgainBtn.innerHTML = 'Play Again';
@@ -247,25 +327,31 @@ function Game() {
         this.playAgainBtn.style.cursor = 'pointer';
         gameOver.appendChild(this.playAgainBtn);
 
-        this.playAgainBtn.onclick = function() {
-            document.location.reload();
-        };
-        // this.playAgainBtn.onclick = that.playAgain;
+        // this.playAgainBtn.onclick = function() {
+        //     document.location.reload();
+        // };
+
+        this.playAgainBtn.onclick = that.playAgain;
     }
 
-    // this.playAgain = function() {
-    //     gameOver.style.display = 'none';
-    //     score = 0;
+    this.playAgain = function() {
+        gameOver.style.display = 'none';
+        gameOver.removeChild(that.gameOverTxt);
+        gameOver.removeChild(that.currentScoreTxt);
+        gameOver.removeChild(that.playAgainBtn);
+        // clearInterval(interval);
 
-    //     for (var i = 0; i < enemyCars.length; i++) {
-    //         enemyCars[i].destroyCar();
-    //     }
-    //     move = 0;
-    //     enemyCars = [];
-    //     myCar.destroyMyCar(gameContainer);
+        for (var i = 0; i < enemyCars.length; i++) {
+            enemyCars[i].destroyCar();
+        }
+        myCar.destroyMyCar(gameContainer);
 
-    //     that.init();
-    // }
+        enemyCars = [];
+        score = 0;
+        that.scoreTrack.innerHTML = 'Score<br> ' + score;
+
+        that.startGame();
+    }
 }
 
 var game = new Game();
