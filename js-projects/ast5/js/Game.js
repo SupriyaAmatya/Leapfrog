@@ -8,6 +8,8 @@ function Game() {
     var that = this;
 
     var frames = 0;
+    var pipeArray = [];
+    var maxYPos = -150;
 
     //load sprite image
     var sprite = new Image();
@@ -30,12 +32,14 @@ function Game() {
     };
 
     this.baseGround = new BaseGround(canvas.height);
-    this.bird = new Bird(this);
+    this.bird = new Bird(game1);
+    this.pipe;
 
     this.gameLoop = function() {
         that.control();
-        that.update();
         that.draw();
+        that.update();
+
         frames++;
 
         requestAnimationFrame(that.gameLoop);
@@ -55,25 +59,27 @@ function Game() {
         this.baseGround.draw(ctx);
         this.bird.draw(ctx);
 
+
         if (state.current == state.getReady) {
             ctx.drawImage(sprite, 0, 229, 173, 45,
                 canvas.width / 2 - 173 / 2, 130, 173, 45);
             ctx.strokeText("Tap to play", 100, 200);
         }
 
-
         //game over message
         if (state.current == state.over) {
             ctx.drawImage(sprite, 175, 229, 225, 200,
                 canvas.width / 2 - 225 / 2, 150, 225, 200);
         }
-
-
     }
 
     this.update = function() {
         if (state.current == state.game) {
             that.bird.update();
+            that.baseGround.update();
+            that.checkGroundCollision();
+            that.generatePipes();
+            that.checkPipeCollision();
         }
     }
 
@@ -93,9 +99,36 @@ function Game() {
         });
     }
 
+    this.generatePipes = function() {
+        if (state.current != state.game)
+            return;
+
+        if (frames % 100 === 0) {
+            this.pipe = new Pipe();
+            pipeArray.push({
+                x: canvas.width,
+                y: maxYPos * (Math.random() + 1)
+            });
+
+            this.pipe.draw(ctx, pipeArray);
+            console.log(pipeArray);
+            this.pipe.update(pipeArray);
+        }
+    }
+
+    this.checkGroundCollision = function() {
+        if (that.bird.y + that.bird.height / 2 === canvas.height - that.baseGround.height) {
+            state.current = state.over;
+            // console.log(state.over);
+        }
+    }
+
+    this.checkPipeCollision = function() {
+
+    }
 
 }
-var game = new Game().gameLoop();
+var game1 = new Game().gameLoop();
 
 
 

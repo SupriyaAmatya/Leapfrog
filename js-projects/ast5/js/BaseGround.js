@@ -7,7 +7,7 @@ function BaseGround(gameHeight) {
     this.x = 0;
     this.y = this.gameHeight - this.height;
 
-    this.dx = 5; //move 5
+    this.dx = 2; //move 
     this.image = document.getElementById('sprite');
 
     this.draw = function(ctx) {
@@ -15,5 +15,9 @@ function BaseGround(gameHeight) {
             this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.sX, this.sY, this.width, this.height,
             this.x + this.width, this.y, this.width, this.height);
+    }
+
+    this.update = function() {
+        this.x = (this.x - this.dx) % (this.width / 2.3);
     }
 }

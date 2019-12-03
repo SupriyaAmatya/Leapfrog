@@ -39,11 +39,12 @@ function Bird(game) {
         if (this.y + this.height / 2 >= 400) { // 400 = canvasHeight-baseGroundHeight
             // console.log('over');
             this.y = 400 - this.height / 2;
-            // console.log(game.state.current);
-            if (game.state.current == game.state.game) {
-                game.state.current = game.state.cover;
-            }
+            // console.log(that.game.canvas.height);
+            // if (this.game.state.current == this.game.state.game) {
+            //     this.game.state.current = this.game.state.cover;
+            // }
         }
+
     }
 
     this.flyUp = function() {
