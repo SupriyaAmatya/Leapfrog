@@ -319,7 +319,7 @@ function Game() {
                 fire = false;
                 setTimeout(function() {
                     fire = true;
-                }, 300);
+                }, 1000);
             }
 
         }
