@@ -373,7 +373,7 @@ function Game() {
     // }
 
     this.generatePowerUps = function() {
-        if (Math.abs(move) % 600 == 0) {
+        if (Math.abs(move) % 700 == 0) {
             if (bulletCount <= 5) {
                 powerUp = new PowerUp(gameContainer);
                 powerUpArray.push(powerUp);
