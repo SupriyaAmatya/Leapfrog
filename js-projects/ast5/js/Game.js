@@ -13,7 +13,7 @@ function Game() {
 
     //load sprite image
     var sprite = new Image();
-    sprite.src = './images/sprite.png';
+    sprite.src = 'images/sprite.png';
 
     //background image setup
     this.sX = 0;
