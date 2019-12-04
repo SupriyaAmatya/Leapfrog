@@ -1,9 +1,10 @@
-function Pipe() {
+function Pipe(bird) {
+    this.bird = bird;
     this.width = 53;
     this.height = 400;
-    this.gap = 85;
+    this.gap = 120;
 
-    this.sTopX = 552;
+    this.sTopX = 553;
     this.sTopY = 0;
     this.sBottomX = 502;
     this.sBottomY = 0;
@@ -13,25 +14,30 @@ function Pipe() {
 
 
     this.draw = function(ctx, pipeArray) {
+
         for (var i = 0; i < pipeArray.length; i++) {
-            var topYPos = pipeArray[i].y;
-            var bottomYPos = pipeArray[i].y + this.height + this.gap;
-            console.log(pipeArray[i].x);
-            //top pips
+            let p = pipeArray[i];
+            // console.log('bottomy>> ', p.y);
+            var topYPos = p.y;
+            var bottomYPos = p.y + this.height + this.gap;
+
+            //top pipe
             ctx.drawImage(this.image, this.sTopX, this.sTopY, this.width, this.height,
-                pipeArray[i].x, topYPos, this.width, this.height);
+                p.x, topYPos, this.width, this.height);
 
             //bottom pipe
             ctx.drawImage(this.image, this.sBottomX, this.sBottomY, this.width, this.height,
-                pipeArray[i].x, bottomYPos, this.width, this.height);
+                p.x, bottomYPos, this.width, this.height);
         }
 
     }
 
     this.update = function(pipeArray) {
         for (var i = 0; i < pipeArray.length; i++) {
-            console.log(pipeArray.length);
-            pipeArray[i].x = -this.dx
+            let p = pipeArray[i];
+
+            p.x -= this.dx
         }
     }
+
 }

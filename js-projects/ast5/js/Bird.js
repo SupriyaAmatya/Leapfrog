@@ -17,17 +17,17 @@ function Bird(game) {
     var that = this;
 
     //birds animation
-    this.animation = [
-        { sX: 276, sY: 112 }, //1st bird
-        { sX: 276, sY: 139 }, // 2nd bird
-        { sX: 276, sY: 164 }, //3rd bird
-        { sX: 276, sY: 139 } //2nd bird
-    ];
+    // this.animation = [
+    //     { sX: 276, sY: 112 }, //1st bird
+    //     { sX: 276, sY: 139 }, // 2nd bird
+    //     { sX: 276, sY: 164 }, //3rd bird
+    //     { sX: 276, sY: 139 } //2nd bird
+    // ];
 
     this.draw = function(ctx) {
-        var bird = this.animation[this.frame];
-        this.frame = this.frame % this.animation.length;
-        ctx.drawImage(this.image, bird.sX, bird.sY, this.width, this.height,
+        // var bird = this.animation[this.frame];
+        // this.frame = this.frame % this.animation.length;
+        ctx.drawImage(this.image, this.sX, this.sY, this.width, this.height,
             this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
     }
 
@@ -37,17 +37,17 @@ function Bird(game) {
 
         //collision with base ground
         if (this.y + this.height / 2 >= 400) { // 400 = canvasHeight-baseGroundHeight
-            // console.log('over');
             this.y = 400 - this.height / 2;
-            // console.log(that.game.canvas.height);
-            // if (this.game.state.current == this.game.state.game) {
-            //     this.game.state.current = this.game.state.cover;
-            // }
         }
 
     }
 
     this.flyUp = function() {
         this.speed = -this.jump;
+    }
+
+    this.reset = function() {
+        this.y = 150;
+        this.speed = 0;
     }
 }
