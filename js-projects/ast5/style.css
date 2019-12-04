@@ -3,9 +3,16 @@
     padding: 0;
 }
 
-canvas {
+#game-container {
     display: block;
-    margin: 10px auto;
+    margin: 30px;
+    border: 1px solid;
+    float: left;
+}
+
+#game-container2 {
+    display: inline-block;
+    margin: 30px;
     border: 1px solid;
 }
 

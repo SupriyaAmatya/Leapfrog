@@ -5,7 +5,7 @@ function Bird(game) {
     this.sX = 276;
     this.sY = 112;
     this.width = 35;
-    this.height = 26;
+    this.height = 25;
     this.x = 50;
     this.y = 150;
     this.frame = 0; //for animation
@@ -13,7 +13,7 @@ function Bird(game) {
 
     this.speed = 0;
     this.gravity = 0.25;
-    this.jump = 4.5;
+    this.jump = 4;
     var that = this;
 
     //birds animation

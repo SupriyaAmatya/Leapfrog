@@ -35,7 +35,6 @@ function Pipe(bird) {
     this.update = function(pipeArray) {
         for (var i = 0; i < pipeArray.length; i++) {
             let p = pipeArray[i];
-
             p.x -= this.dx
         }
     }

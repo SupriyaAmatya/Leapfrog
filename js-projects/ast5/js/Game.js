@@ -1,14 +1,11 @@
-function Game() {
-
-    var canvas = document.getElementById('game-container');
-    var ctx = canvas.getContext('2d');
-
+function Game(canvas, ctx) {
+    console.log(canvas);
     canvas.width = 350;
     canvas.height = 512;
     var that = this;
 
     var frames = 0;
-    var pipeArray = [];
+    this.pipeArray = [];
     this.maxYPos = -150;
 
     //load sprite image
@@ -44,11 +41,12 @@ function Game() {
         that.update();
 
         frames++;
-
         requestAnimationFrame(that.gameLoop);
     }
 
     this.draw = function() {
+
+        //bg color
         ctx.fillStyle = '#4ec0ca';
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -59,10 +57,9 @@ function Game() {
         ctx.drawImage(sprite, this.sX, this.sY, this.width, this.height,
             this.x + this.width, this.y, this.width, this.height);
 
-        this.pipe.draw(ctx, pipeArray);
+        this.pipe.draw(ctx, this.pipeArray);
         this.baseGround.draw(ctx);
         this.bird.draw(ctx);
-
 
 
         if (state.current == state.getReady) {
@@ -112,8 +109,8 @@ function Game() {
     }
 
     this.control = function() {
-        var btnX = 140;
-        var btnY = 310;
+        var btnX = 130;
+        var btnY = 320;
         var btnWidth = 83;
         var btnHeight = 29;
 
@@ -146,13 +143,13 @@ function Game() {
             return;
 
         if (frames % 100 === 0) {
-            pipeArray.push({
+            this.pipeArray.push({
                 x: canvas.width,
                 y: this.maxYPos * (Math.random() + 1)
             });
         }
 
-        this.pipe.update(pipeArray);
+        this.pipe.update(this.pipeArray);
     }
 
     this.checkGroundCollision = function() {
@@ -162,8 +159,8 @@ function Game() {
     }
 
     this.checkPipeCollision = function() {
-        for (var i = 0; i < pipeArray.length; i++) {
-            let p = pipeArray[i];
+        for (var i = 0; i < this.pipeArray.length; i++) {
+            let p = this.pipeArray[i];
             var bottomPipeYPos = p.y + that.pipe.height + that.pipe.gap;
 
             //top pipe collision
@@ -186,7 +183,7 @@ function Game() {
             }
 
             if (p.x + that.pipe.width < 0) {
-                // that.pipeArray.shift();
+                this.pipeArray.shift();
                 score += 1;
                 console.log(score);
                 best = Math.max(score, best);
@@ -196,10 +193,17 @@ function Game() {
     }
 
     this.restart = function() {
-        pipeArray = [];
+        this.pipeArray = [];
         score = 0
         that.bird.reset();
     }
 
 }
-var game1 = new Game().gameLoop();
+
+var canvas1 = document.getElementById('game-container');
+var ctx1 = canvas1.getContext('2d');
+var game1 = new Game(canvas1, ctx1).gameLoop();
+
+var canvas2 = document.getElementById('game-container2');
+var ctx2 = canvas2.getContext('2d');
+var game2 = new Game(canvas2, ctx2).gameLoop();
