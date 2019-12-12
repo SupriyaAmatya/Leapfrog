@@ -1,21 +1,20 @@
 function SheepGame() {
 
-
     var width = 897;
     var height = 668;
 
-    var bgWidth = 897;
-    var bgHeight = 565;
+    var laneWidth = 897;
+    var laneHeight = 450;
 
     var sX = 0;
-    var sY = 78;
+    var sY = 0;
 
     var sheep; //sheep instance
 
     var that = this;
 
     this.x = 0;
-    this.y = height - bgHeight;
+    this.y = 170;
 
     var canvas = document.getElementById('game-container');
     var ctx = canvas.getContext('2d');
@@ -24,27 +23,27 @@ function SheepGame() {
         canvas.width = width;
         canvas.height = height;
 
-        sheep = new Sheep();
+        sheep = new Sheep(canvas, ctx, 314, 70, 5);
 
         that.startGame();
 
     }
 
     this.startGame = function() {
-        //main loo
+        //main loop
         ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = "#b5b2a0";
-        ctx.fillRect(0, 0, width, 103);
-        ctx.drawImage(bg, sX, sY, bgWidth, bgHeight, that.x, that.y, bgWidth, bgHeight);
+        ctx.drawImage(lane, sX, sY, laneWidth, laneHeight, that.x, that.y, laneWidth, laneHeight);
 
-        sheep.draw();
+        sheep.init();
 
+        ctx.drawImage(bushRight, 0, 0, 88, 565, laneWidth - 88, 103, 88, 565);
+        ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
         requestAnimationFrame(that.startGame)
     }
 
 }
 
 var game = new SheepGame();
-bg.onload = function() {
+lane.onload = function() {
     game.init();
 }
