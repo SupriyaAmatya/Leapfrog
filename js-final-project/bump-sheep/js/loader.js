@@ -5,7 +5,7 @@ var bushLeft = new Image();
 bushLeft.src = 'images/bush2.png'
 
 var button = new Image();
-button.src = ''
+button.src = 'images/button.png'
 
 var smallWhiteSprite = new Image();
 smallWhiteSprite.src = 'images/small-white.png';
@@ -20,5 +20,5 @@ var superLargeWhiteSprite = new Image();
 superLargeWhiteSprite.src = 'images/super-large-white.png'
 
 //black sheep
-var smallWhiteSprite = new Image();
-smallWhiteSprite.src = 'images/small-black.png';
+var smallBlackSprite = new Image();
+smallBlackSprite.src = 'images/small-black.png';

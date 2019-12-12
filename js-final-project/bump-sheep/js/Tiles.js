@@ -27,6 +27,11 @@ function Tiles() {
         that.sX = 2 * that.width;
     }
 
+    this.tile4 = function() {
+        this.type = 4;
+        that.sX = 3 * that.width;
+    }
+
     this.draw = function(ctx) {
         ctx.drawImage(tiles, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
 

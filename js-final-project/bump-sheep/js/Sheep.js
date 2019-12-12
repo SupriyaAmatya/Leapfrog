@@ -8,26 +8,14 @@ function Sheep(canvas, ctx, width, height, weight) {
     var sX;
     var sY = 0;
     this.x = canvas.width - 75;
-    this.y = 170;
+    this.y;
 
     var tickCount = 0;
     var ticksPerFrame = 5;
-
-
     var currentFrame = 0;
+
     var that = this;
-
     this.lane;
-
-    // var smallWhite = {
-    //     width: 314 / numberOfFrames,
-    //     height: 70,
-    //     weight: 5,
-    //     draw: function() {
-    //         sX = currentFrame * smallWhite.width;
-    //         ctx.drawImage(smallWhiteSprite, sX, sY, this.width, this.height, that.x, that.y, this.width, this.height);
-    //     }
-    // }
 
     this.init = function() {
         that.draw();
@@ -46,25 +34,28 @@ function Sheep(canvas, ctx, width, height, weight) {
         } else
             return 530;
     }
+    that.y = that.getRandomPosition();
 
     this.update = function() {
         tickCount += 1;
-
         if (tickCount > ticksPerFrame) {
             tickCount = 0;
+
             if (currentFrame < numberOfFrames - 1) {
                 currentFrame++;
             } else currentFrame = 0;
         }
-
         that.x -= 2;
-
     }
 
     this.draw = function() {
         that.update();
         sX = currentFrame * that.width;
-        ctx.drawImage(smallWhiteSprite, sX, sY, this.width, this.height, that.x, that.y, this.width, this.height);
+
+        if (this.weight == 5) {
+            ctx.drawImage(smallWhiteSprite, sX, sY, this.width, this.height, that.x, that.y, this.width, this.height);
+        }
+
         // mediumWhite.draw();
         // smallWhite.draw();
     }
