@@ -32,15 +32,15 @@ function Game(canvas, ctx) {
     var best = score;
 
     this.baseGround = new BaseGround(canvas.height);
-    this.bird = new Bird(game1);
+    this.bird = new Bird(state, frames);
     this.pipe = new Pipe(this.bird);
 
     this.gameLoop = function() {
         that.control();
         that.draw();
         that.update();
-
         frames++;
+        this.bird = new Bird(state, frames);
         requestAnimationFrame(that.gameLoop);
     }
 
@@ -66,6 +66,7 @@ function Game(canvas, ctx) {
             ctx.drawImage(sprite, 0, 229, 173, 45,
                 canvas.width / 2 - 173 / 2, 130, 173, 45);
             ctx.strokeText("Tap to play", 100, 200);
+            ctx.font = "22px Teko";
         }
 
         //game over message
@@ -169,8 +170,9 @@ function Game(canvas, ctx) {
                 that.bird.y + that.bird.width / 2 > p.y &&
                 that.bird.y - that.bird.width / 2 < p.y + that.pipe.height
             ) {
-                state.current = state.over;
-                that.bird.y--;
+                that.bird.y--
+                    state.current = state.over;
+
             }
 
             //bottom pipe collision
@@ -185,7 +187,6 @@ function Game(canvas, ctx) {
             if (p.x + that.pipe.width < 0) {
                 this.pipeArray.shift();
                 score += 1;
-                console.log(score);
                 best = Math.max(score, best);
                 localStorage.setItem("best", best);
             }
@@ -206,4 +207,4 @@ var game1 = new Game(canvas1, ctx1).gameLoop();
 
 var canvas2 = document.getElementById('game-container2');
 var ctx2 = canvas2.getContext('2d');
-var game2 = new Game(canvas2, ctx2).gameLoop();
+// var game2 = new Game(canvas2, ctx2).gameLoop();

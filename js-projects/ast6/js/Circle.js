@@ -20,11 +20,10 @@ function Circle(ctx) {
 
     //animation
     this.moveCircle = function() {
-        move += 0.1;
+        move += 0.06;
         this.y = Math.sin(move) * 50 + this.currentY;
         this.x = Math.cos(move) * 5 + this.currentX;
-        this.radius = Math.cos(move) * this.radiusAmp / 2 + this.radiusAmp / 2;
+        this.radius = Math.cos(move) * this.radiusAmp / 2 + this.radiusAmp;
 
-        frames++;
     }
 }
