@@ -10,6 +10,8 @@ function SheepGame() {
     var sY = 0;
 
     var sheep; //sheep instance
+    var tiles; // tile map
+    var tileSize = 90;
 
     var that = this;
 
@@ -24,6 +26,7 @@ function SheepGame() {
         canvas.height = height;
 
         sheep = new Sheep(canvas, ctx, 314, 70, 5);
+        tiles = new Tiles();
 
         that.startGame();
 
@@ -32,8 +35,7 @@ function SheepGame() {
     this.startGame = function() {
         //main loop
         ctx.clearRect(0, 0, width, height);
-        ctx.drawImage(lane, sX, sY, laneWidth, laneHeight, that.x, that.y, laneWidth, laneHeight);
-
+        that.renderMap();
         sheep.init();
 
         ctx.drawImage(bushRight, 0, 0, 88, 565, laneWidth - 88, 103, 88, 565);
@@ -41,9 +43,37 @@ function SheepGame() {
         requestAnimationFrame(that.startGame)
     }
 
+    this.renderMap = function() {
+        for (var col = 0; col < mapH; col++) {
+            for (var row = 0; row < mapW; row++) {
+                switch (gameMap[((col * mapW) + row)]) {
+                    case 1:
+                        console.log(tiles);
+                        tiles.x = row * tileSize;
+                        tiles.y = col * tileSize;
+                        tiles.tile1();
+                        tiles.draw(ctx);
+                        break;
+
+                    case 2:
+                        tiles.x = row * tileSize;
+                        tiles.y = col * tileSize;
+                        tiles.tile2();
+                        tiles.draw(ctx);
+                        break;
+
+                    case 3:
+                        tiles.x = row * tileSize;
+                        tiles.y = col * tileSize;
+                        tiles.tile3();
+                        tiles.draw(ctx);
+                        break;
+                }
+            }
+        }
+    }
+
 }
 
 var game = new SheepGame();
-lane.onload = function() {
-    game.init();
-}
+game.init();

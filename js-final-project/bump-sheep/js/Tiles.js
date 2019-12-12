@@ -1,0 +1,34 @@
+function Tiles() {
+    this.type;
+    this.sX;
+    this.sY = 0;
+    this.x;
+    this.y;
+    this.width = 90;
+    this.height = 90;
+
+    var that = this;
+
+    var tiles = new Image();
+    tiles.src = 'images/tiles.png';
+
+    this.tile1 = function() {
+        this.type = 1;
+        that.sX = 0;
+    }
+
+    this.tile2 = function() {
+        this.type = 2;
+        that.sX = 1 * that.width;
+    }
+
+    this.tile3 = function() {
+        this.type = 3;
+        that.sX = 2 * that.width;
+    }
+
+    this.draw = function(ctx) {
+        ctx.drawImage(tiles, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
+
+    }
+}
