@@ -207,4 +207,4 @@ var game1 = new Game(canvas1, ctx1).gameLoop();
 
 var canvas2 = document.getElementById('game-container2');
 var ctx2 = canvas2.getContext('2d');
-// var game2 = new Game(canvas2, ctx2).gameLoop();
+var game2 = new Game(canvas2, ctx2).gameLoop();
