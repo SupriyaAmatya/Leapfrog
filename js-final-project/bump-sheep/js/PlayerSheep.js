@@ -21,7 +21,6 @@ function PlayerSheep(canvas, ctx, width, height, weight) {
         that.draw();
     }
     this.update = function() {
-
         tickCount += 1;
         if (tickCount > ticksPerFrame) {
             tickCount = 0;
@@ -30,16 +29,17 @@ function PlayerSheep(canvas, ctx, width, height, weight) {
             } else currentFrame = 0;
         }
         that.x += 2;
+        console.log('x=', that.x);
     }
 
     this.draw = function() {
         that.update();
-
+        console.log('y', this.y);
         sX = currentFrame * that.width;
-        if (this.weight == 5) {
-            ctx.drawImage(smallBlackSprite, sX, sY, this.width, this.height, this.x, this.y, this.width, this.height);
-        }
+        ctx.drawImage(smallBlackSprite, sX, sY, that.width, that.height, that.x, that.y, that.width, that.height);
+        console.log(smallBlackSprite);
+        // if (this.weight == 5) {
+
+        // }
     }
-
-
 }

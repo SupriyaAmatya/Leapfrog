@@ -5,17 +5,20 @@ function SheepGame() {
 
     var sX = 0;
     var sY = 0;
+    this.x = 0;
+    this.y = 170;
 
     var sheep; //sheep instance
     var playerSheep; //player sheep instance
+    var sheeps = [];
 
     var tiles; // tile map
     var tileSize = 90;
 
-    var that = this;
+    var temp;
+    var move;
 
-    this.x = 0;
-    this.y = 170;
+    var that = this;
 
     var canvas = document.getElementById('game-container');
     var ctx = canvas.getContext('2d');
@@ -25,10 +28,30 @@ function SheepGame() {
         canvas.height = height;
 
         tiles = new Tiles();
-        sheep = new Sheep(canvas, ctx, 314, 70, 5);
+
+
         playerSheep = new PlayerSheep(canvas, ctx, 286, 70, 5);
 
+
         that.startGame();
+
+    }
+
+    this.generateSheep = function() {
+        temp = Math.floor(Math.random() * 10 + 1);
+
+        if (temp >= 1 && temp <= 5) {
+            sheep = new Sheep(canvas, ctx, 200, 50, 5);
+        }
+        if (temp >= 6 && temp <= 8) {
+            sheep = new Sheep(canvas, ctx, 320, 60, 10);
+        }
+        if (temp == 9) {
+            sheep = new Sheep(canvas, ctx, 360, 70, 15);
+        }
+        if (temp == 10) {
+            sheep = new Sheep(canvas, ctx, 400, 80, 20);
+        }
 
     }
 
@@ -38,9 +61,8 @@ function SheepGame() {
 
         //map creation
         that.renderMap();
-
-        sheep.init();
-        playerSheep.init(that.y);
+        that.generateSheep();
+        that.updateSheep();
 
         ctx.drawImage(bushRight, 0, 0, 88, 565, width - 88, 103, 88, 565);
         ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
@@ -48,7 +70,7 @@ function SheepGame() {
         //go buttons
         that.goBtnControl();
 
-        requestAnimationFrame(that.startGame)
+        move = requestAnimationFrame(that.startGame);
     }
 
     this.renderMap = function() {
@@ -87,6 +109,18 @@ function SheepGame() {
         }
     }
 
+    this.updateSheep = function() {
+        if (move % 250 == 0) {
+            sheeps.push(sheep);
+            sheep.init(move);
+            console.log('length', sheeps.length);
+        }
+
+        for (var i = 0; i < sheeps.length; i++) {
+            sheeps[i].draw();
+        }
+    }
+
     this.goBtnControl = function() {
         var btnWidth = 76;
         var btnHeight = 76;
@@ -108,11 +142,11 @@ function SheepGame() {
                 let clickY = event.clientY - rect.top;
                 if (clickX >= btnX && clickX <= btnX + btnWidth &&
                     clickY >= btnY && clickY <= btnY + btnHeight) {
-
+                    // console.log(btnY)
+                    // console.log(playerSheep);
                     playerSheep.init(btnY);
                 }
             }
-
         });
     }
 }
