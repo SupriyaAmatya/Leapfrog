@@ -1,25 +1,28 @@
-function PlayerSheep(canvas, ctx, width, height, weight) {
+function PlayerSheep(btnY) {
 
-    var numberOfFrames = 4;
-    this.width = width / numberOfFrames;
-    this.height = height;
-    this.weight = weight;
-
+    this.width;
+    this.height;
+    this.weight;
+    this.x = 75;
+    this.y = btnY + 10;
+    this.dx = 2;
     var sX;
     var sY = 0;
-    this.x = 75;
-    this.y;
 
+    var numberOfFrames = 4;
     var tickCount = 0;
     var ticksPerFrame = 5;
     var currentFrame = 0;
 
     var that = this;
 
-    this.init = function(btnY) {
-        this.y = btnY;
-        that.draw();
-    }
+    this.init = function(width, height, weight) {
+        that.width = width / numberOfFrames;
+        that.height = height;
+        that.weight = weight;
+        // that.y = btnY + 10;
+    };
+
     this.update = function() {
         tickCount += 1;
         if (tickCount > ticksPerFrame) {
@@ -28,18 +31,29 @@ function PlayerSheep(canvas, ctx, width, height, weight) {
                 currentFrame++;
             } else currentFrame = 0;
         }
-        that.x += 2;
-        console.log('x=', that.x);
+        that.x += that.dx;
     }
 
-    this.draw = function() {
-        that.update();
-        console.log('y', this.y);
+    this.draw = function(ctx) {
         sX = currentFrame * that.width;
-        ctx.drawImage(smallBlackSprite, sX, sY, that.width, that.height, that.x, that.y, that.width, that.height);
-        console.log(smallBlackSprite);
-        // if (this.weight == 5) {
+        if (this.weight == 5) {
+            ctx.drawImage(smallBlackSprite, sX, sY, that.width, that.height,
+                that.x, that.y, that.width, that.height);
+        }
 
-        // }
+        if (this.weight == 10) {
+            ctx.drawImage(mediumBlackSprite, sX, sY, that.width, that.height,
+                that.x, that.y, that.width, that.height);
+        }
+
+        if (this.weight == 15) {
+            ctx.drawImage(largeBlackSprite, sX, sY, that.width, that.height,
+                that.x, that.y, that.width, that.height);
+        }
+
+        if (this.weight == 20) {
+            ctx.drawImage(superLargeBlackSprite, sX, sY, that.width, that.height,
+                that.x, that.y, that.width, that.height);
+        }
     }
 }

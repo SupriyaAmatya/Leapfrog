@@ -1,30 +1,34 @@
-function Sheep(canvas, ctx, width, height, weight) {
+function Sheep() {
 
-    var numberOfFrames = 4;
-    this.width = width / numberOfFrames;
-    this.height = height;
-    this.weight = weight;
+    this.width;
+    this.height;
+    this.weight;
 
     var sX;
     var sY = 0;
 
+    this.x;
     this.y;
-
-    var tickCount;
-    var ticksPerFrame;
-    var currentFrame;
-
-    var that = this;
+    this.dx = 2;
     this.lane;
 
-    this.init = function(move) {
+    var numberOfFrames = 4;
+    var tickCount = 0;
+    var ticksPerFrame = 5;
+    var currentFrame = 0;
+
+    var that = this;
+
+
+    this.init = function(canvas, width, height, weight) {
         // if (move % 100 >= 0)
-        console.log('white');
-        tickCount = 0;
-        ticksPerFrame = 5;
-        currentFrame = 0;
-        this.x = canvas.width - 75;
-    }
+        that.width = width / numberOfFrames;
+        that.height = height;
+        that.weight = weight;
+        that.x = canvas.width - 75;
+        that.y = that.getRandomPosition();
+
+    };
 
     this.getRandomPosition = function() {
         that.lane = Math.floor(Math.random() * 5) + 1;
@@ -38,8 +42,13 @@ function Sheep(canvas, ctx, width, height, weight) {
             return 460;
         } else
             return 550;
-    }
-    that.y = that.getRandomPosition();
+    };
+
+    this.getPlayerPosY = function(btnY) {
+
+        this.posY = btnY;
+        return this.posY;
+    };
 
 
     this.update = function() {
@@ -51,34 +60,26 @@ function Sheep(canvas, ctx, width, height, weight) {
                 currentFrame++;
             } else currentFrame = 0;
         }
-        that.x -= 2;
-    }
+        that.x -= that.dx;
+    };
 
-    this.draw = function() {
-        that.update();
+    this.draw = function(ctx) {
         sX = currentFrame * that.width;
-
-        if (this.weight == 5) {
+        if (that.weight == 5) {
             ctx.drawImage(smallWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-
-        if (this.weight == 10) {
+        if (that.weight == 10) {
             ctx.drawImage(mediumWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-
-        if (this.weight == 15) {
+        if (that.weight == 15) {
             ctx.drawImage(largeWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-
-        if (this.weight == 20) {
+        if (that.weight == 20) {
             ctx.drawImage(superLargeWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-
-        // mediumWhite.draw();
-        // smallWhite.draw();
-    }
+    };
 }

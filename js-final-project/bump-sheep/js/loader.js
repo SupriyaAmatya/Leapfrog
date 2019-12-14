@@ -4,9 +4,10 @@ bushRight.src = 'images/bush.png'
 var bushLeft = new Image();
 bushLeft.src = 'images/bush2.png'
 
-var button = new Image();
-button.src = 'images/button.png'
+var buttonImg = new Image();
+buttonImg.src = 'images/button.png'
 
+//white sheep sprite
 var smallWhiteSprite = new Image();
 smallWhiteSprite.src = 'images/small-white.png';
 
@@ -19,6 +20,15 @@ largeWhiteSprite.src = 'images/large-white.png'
 var superLargeWhiteSprite = new Image();
 superLargeWhiteSprite.src = 'images/super-large-white.png'
 
-//black sheep
+//black sheep sprite
 var smallBlackSprite = new Image();
 smallBlackSprite.src = 'images/small-black.png';
+
+var mediumBlackSprite = new Image();
+mediumBlackSprite.src = 'images/medium-black.png'
+
+var largeBlackSprite = new Image();
+largeBlackSprite.src = 'images/large-black.png'
+
+var superLargeBlackSprite = new Image();
+superLargeBlackSprite.src = 'images/super-large-black.png'
