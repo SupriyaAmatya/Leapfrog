@@ -23,6 +23,8 @@ function SheepGame() {
     var numberOfLanes = 5;
 
     //process bar
+    var start = 5;
+    var diff;
     var alWhite = 0;
     var alBlack = 0;
     var barTimer = false;
@@ -83,7 +85,6 @@ function SheepGame() {
         that.drawScore();
         that.createSheep();
         that.updateSheep();
-
         that.checkBlackWhiteCollision();
 
         if (isBlackSheep) {
@@ -148,8 +149,8 @@ function SheepGame() {
     };
 
     this.drawButton = function() {
-        // ctx.drawImage(bushRight, 0, 0, 88, 565, width - 88, 103, 88, 565);
-        // ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
+        ctx.drawImage(bushRight, 0, 0, 88, 565, width - 88, 103, 88, 565);
+        ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
 
         buttons.forEach(function(button) {
             button.draw();
@@ -248,8 +249,7 @@ function SheepGame() {
     };
 
     this.progressBarWhite = function() {
-        var start = 5;
-        var diff;
+
         diff = ((alWhite / 100) * Math.PI * 2 * 10).toFixed(2);
         ctx.lineWidth = 10;
         ctx.strokeStyle = "#e0fe53";
@@ -264,8 +264,7 @@ function SheepGame() {
 
     this.progressBarBlack = function() {
 
-        var start = 5;
-        var diff;
+
         diff = ((alBlack / 100) * Math.PI * 2 * 10).toFixed(2);
         ctx.lineWidth = 10;
         ctx.strokeStyle = "#e0fe53";
@@ -283,5 +282,5 @@ function SheepGame() {
     };
 }
 
-var game = new SheepGame();
-game.init();
+// var game = new SheepGame();
+// game.init();

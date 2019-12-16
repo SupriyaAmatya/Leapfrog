@@ -1,3 +1,13 @@
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 .main-wrapper {
     width: 100%;
     margin: 0 auto;
@@ -8,5 +18,103 @@
     margin: 0 auto;
     background: url('../images/ground.png');
     background-size: contain;
+    /* display: none; */
+    float: left;
     overflow: hidden;
+}
+
+.start-screen {
+    width: 897px;
+    height: 668px;
+    position: relative;
+    background: url('../images/main-bg.png');
+    background-repeat: no-repeat;
+}
+
+.play-btn {
+    background: url('../images/play-btn.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200px;
+    height: 210px;
+    top: 50%;
+    left: 38%;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+.mode-selection {
+    display: none;
+    width: 897px;
+    height: 668px;
+    position: relative;
+    background: url('../images/mode.png');
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.strategy-btn {
+    background: url('../images/strategies.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 275px;
+    height: 222px;
+    top: 50%;
+    left: 5%;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+.resource-btn {
+    background: url('../images/resource.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 285px;
+    height: 214px;
+    top: 12%;
+    left: 35%;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+.duel-btn {
+    background: url('../images/duel.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 275px;
+    height: 221px;
+    top: 50%;
+    left: 65%;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+.back-btn {
+    background: url('../images/back-btn.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 60px;
+    height: 55px;
+    top: 10%;
+    left: 5%;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.play-btn:hover,
+.strategy-btn:hover,
+.resource-btn:hover,
+.duel-btn:hover,
+.back-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
 }
