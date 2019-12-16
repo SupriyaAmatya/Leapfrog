@@ -1,4 +1,4 @@
-function Sheep() {
+function Sheep(frame) {
 
     this.width;
     this.height;
@@ -9,9 +9,9 @@ function Sheep() {
 
     this.x;
     this.y;
-    this.dx = 2;
+    this.dx = 2.5;
     this.lane;
-
+    this.frame = frame;
     var numberOfFrames = 4;
     var tickCount = 0;
     var ticksPerFrame = 5;
@@ -27,7 +27,6 @@ function Sheep() {
         that.weight = weight;
         that.x = canvas.width - 75;
         that.y = that.getRandomPosition();
-
     };
 
     this.getRandomPosition = function() {
@@ -42,28 +41,11 @@ function Sheep() {
             return 460;
         } else
             return 550;
-    };
 
-    this.getPlayerPosY = function(btnY) {
-
-        this.posY = btnY;
-        return this.posY;
-    };
-
-
-    this.update = function() {
-        tickCount += 1;
-        if (tickCount > ticksPerFrame) {
-            tickCount = 0;
-
-            if (currentFrame < numberOfFrames - 1) {
-                currentFrame++;
-            } else currentFrame = 0;
-        }
-        that.x -= that.dx;
     };
 
     this.draw = function(ctx) {
+
         sX = currentFrame * that.width;
         if (that.weight == 5) {
             ctx.drawImage(smallWhiteSprite, sX, sY, that.width, that.height,
@@ -80,6 +62,37 @@ function Sheep() {
         if (that.weight == 20) {
             ctx.drawImage(superLargeWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
+        }
+
+    };
+
+    this.update = function() {
+        tickCount += 1;
+        if (tickCount > ticksPerFrame) {
+            tickCount = 0;
+
+            if (currentFrame < numberOfFrames - 1) {
+                currentFrame++;
+            } else currentFrame = 0;
+        }
+        that.x -= that.dx;
+    };
+
+    this.checkCollision = function(sheeps) {
+        for (var i = 0; i < sheeps.length; i++) {
+            if (that.x + that.width > sheeps[i].x && that.x < sheeps[i].x + sheeps[i].width &&
+                that.y + that.height > sheeps[i].y && that.y < sheeps[i].y + sheeps[i].height) {
+
+                if (that.weight > sheeps[i].weight) {
+                    that.dx = 1;
+                    sheeps[i].dx = 1;
+                }
+                if (that.weight < sheeps[i].weight) {
+                    that.dx = 0;
+                    sheeps[i].dx = 0;
+                }
+
+            }
         }
     };
 }

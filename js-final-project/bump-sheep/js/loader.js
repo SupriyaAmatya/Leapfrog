@@ -1,11 +1,17 @@
+var tiles = new Image();
+tiles.src = 'images/tiles.png';
+
 var bushRight = new Image();
-bushRight.src = 'images/bush.png'
+bushRight.src = 'images/bush.png';
 
 var bushLeft = new Image();
-bushLeft.src = 'images/bush2.png'
+bushLeft.src = 'images/bush2.png';
 
 var buttonImg = new Image();
-buttonImg.src = 'images/button.png'
+buttonImg.src = 'images/button.png';
+
+var score = new Image();
+score.src = 'images/score.png';
 
 //white sheep sprite
 var smallWhiteSprite = new Image();

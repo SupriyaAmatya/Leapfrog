@@ -9,9 +9,6 @@ function Tiles() {
 
     var that = this;
 
-    var tiles = new Image();
-    tiles.src = 'images/tiles.png';
-
     this.tile1 = function() {
         this.type = 1;
         that.sX = 0;

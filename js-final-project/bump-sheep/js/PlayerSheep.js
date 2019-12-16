@@ -5,7 +5,7 @@ function PlayerSheep(btnY) {
     this.weight;
     this.x = 75;
     this.y = btnY + 10;
-    this.dx = 2;
+    this.dx = 2.5;
     var sX;
     var sY = 0;
 
@@ -22,17 +22,6 @@ function PlayerSheep(btnY) {
         that.weight = weight;
         // that.y = btnY + 10;
     };
-
-    this.update = function() {
-        tickCount += 1;
-        if (tickCount > ticksPerFrame) {
-            tickCount = 0;
-            if (currentFrame < numberOfFrames - 1) {
-                currentFrame++;
-            } else currentFrame = 0;
-        }
-        that.x += that.dx;
-    }
 
     this.draw = function(ctx) {
         sX = currentFrame * that.width;
@@ -55,5 +44,16 @@ function PlayerSheep(btnY) {
             ctx.drawImage(superLargeBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
+    };
+
+    this.update = function() {
+        tickCount += 1;
+        if (tickCount > ticksPerFrame) {
+            tickCount = 0;
+            if (currentFrame < numberOfFrames - 1) {
+                currentFrame++;
+            } else currentFrame = 0;
+        }
+        that.x += that.dx;
     }
 }
