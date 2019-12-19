@@ -1,12 +1,11 @@
-function GameState() {
-    //game state
-    var gameState = {
+function GameMode() {
+    //game mode
+    var gameMode = {
         current: 0,
         getReady: 0,
         strategyMode: 1,
         resourceMode: 2,
         duelMode: 3,
-        gameOver: 4,
     }
 
     var that = this;
@@ -58,7 +57,6 @@ function GameState() {
             modeSelection.style.display = 'none';
             startScreen.style.display = 'block';
         };
-
     }
     this.selectMode = function() {
         startScreen.style.display = 'none';
@@ -66,20 +64,27 @@ function GameState() {
     }
     this.strategyGame = function() {
         modeSelection.style.display = 'none';
-        gameState.current = gameState.strategyMode;
-        if (gameState.current == gameState.strategyMode) {
-            var game = new SheepGame();
+        gameMode.current = gameMode.strategyMode;
+        if (gameMode.current == gameMode.strategyMode) {
+            var game = new SheepGame(gameMode);
             game.init();
         }
     }
     this.resourceGame = function() {
         modeSelection.style.display = 'none';
-        gameState.current = gameState.resourceMode;
+        gameMode.current = gameMode.resourceMode;
+        if (gameMode.current == gameMode.resourceMode) {
+            var game = new SheepGame(gameMode);
+            game.init();
+        }
     }
     this.duelGame = function() {
         modeSelection.style.display = 'none';
-        gameState.current = gameState.duelMode;
+        gameMode.current = gameMode.duelMode;
+        if (gameMode.current == gameMode.duelMode) {
+            var game = new DuelMode(gameMode);
+            game.init();
+        }
     }
-
 }
-new GameState().init();
+new GameMode().init();

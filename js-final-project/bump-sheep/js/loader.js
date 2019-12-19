@@ -13,6 +13,12 @@ buttonImg.src = 'images/button.png';
 var score = new Image();
 score.src = 'images/score.png';
 
+var plant = new Image();
+plant.src = 'images/plant2.png';
+
+var pause = new Image();
+pause.src = 'images/pause.png';
+
 //white sheep sprite
 var smallWhiteSprite = new Image();
 smallWhiteSprite.src = 'images/small-white.png';
@@ -38,3 +44,13 @@ largeBlackSprite.src = 'images/large-black.png'
 
 var superLargeBlackSprite = new Image();
 superLargeBlackSprite.src = 'images/super-large-black.png'
+
+//duel mode
+var duelBg = new Image();
+duelBg.src = 'images/duel-mode.png';
+
+var readyBtn = new Image();
+readyBtn.src = 'images/ready.png';
+
+var timer = new Image();
+timer.src = 'images/time.png';

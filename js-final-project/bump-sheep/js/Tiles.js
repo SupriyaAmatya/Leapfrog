@@ -28,9 +28,16 @@ function Tiles() {
         this.type = 4;
         that.sX = 3 * that.width;
     }
+    this.tile5 = function() {
+        this.type = 5;
+        that.sX = 0;
+    }
 
     this.draw = function(ctx) {
         ctx.drawImage(tiles, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
+    }
 
+    this.drawPlant = function() {
+        ctx.drawImage(buttonImg, that.sX, that.sY, 111, 93, that.x, that.y, that.width, that.height);
     }
 }

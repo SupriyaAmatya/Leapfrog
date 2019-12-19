@@ -3,9 +3,10 @@ function PlayerSheep(btnY) {
     this.width;
     this.height;
     this.weight;
-    this.x = 75;
+    this.x = 0;
+    // this.y = btnY + 10;
     this.y = btnY + 10;
-    this.dx = 2.5;
+    this.dx = 3;
     var sX;
     var sY = 0;
 
@@ -14,33 +15,41 @@ function PlayerSheep(btnY) {
     var ticksPerFrame = 5;
     var currentFrame = 0;
 
+    this.playerSheep = true;
+
     var that = this;
 
     this.init = function(width, height, weight) {
         that.width = width / numberOfFrames;
         that.height = height;
         that.weight = weight;
-        // that.y = btnY + 10;
+        return this.y;
+
     };
+
+
+    this.setDx = function(dx) {
+        this.dx = dx;
+    }
 
     this.draw = function(ctx) {
         sX = currentFrame * that.width;
-        if (this.weight == 5) {
+        if (this.weight == 2) {
             ctx.drawImage(smallBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 10) {
+        if (this.weight == 4) {
             ctx.drawImage(mediumBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 15) {
+        if (this.weight == 6) {
             ctx.drawImage(largeBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 20) {
+        if (this.weight == 8) {
             ctx.drawImage(superLargeBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
@@ -55,5 +64,5 @@ function PlayerSheep(btnY) {
             } else currentFrame = 0;
         }
         that.x += that.dx;
-    }
+    };
 }
