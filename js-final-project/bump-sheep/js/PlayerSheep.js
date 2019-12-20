@@ -3,8 +3,7 @@ function PlayerSheep(btnY) {
     this.width;
     this.height;
     this.weight;
-    this.x = 0;
-    // this.y = btnY + 10;
+    this.x = -100;
     this.y = btnY + 10;
     this.dx = 3;
     var sX;
@@ -24,7 +23,6 @@ function PlayerSheep(btnY) {
         that.height = height;
         that.weight = weight;
         return this.y;
-
     };
 
 
@@ -34,22 +32,22 @@ function PlayerSheep(btnY) {
 
     this.draw = function(ctx) {
         sX = currentFrame * that.width;
-        if (this.weight == 2) {
+        if (this.weight == 1) {
             ctx.drawImage(smallBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 4) {
+        if (this.weight == 3) {
             ctx.drawImage(mediumBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 6) {
+        if (this.weight == 4) {
             ctx.drawImage(largeBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
 
-        if (this.weight == 8) {
+        if (this.weight == 5) {
             ctx.drawImage(superLargeBlackSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }

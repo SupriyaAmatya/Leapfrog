@@ -13,11 +13,14 @@ buttonImg.src = 'images/button.png';
 var score = new Image();
 score.src = 'images/score.png';
 
-var plant = new Image();
-plant.src = 'images/plant2.png';
+var replay = new Image();
+replay.src = 'images/replay.png';
 
-var pause = new Image();
-pause.src = 'images/pause.png';
+var menu = new Image();
+menu.src = 'images/menu.png';
+
+var counter = new Image();
+counter.src = 'images/counter.png';
 
 //white sheep sprite
 var smallWhiteSprite = new Image();

@@ -25,6 +25,14 @@ function DuelMode(gameState) {
         over: 3
     };
 
+    this.frame = 0;
+
+    this.counter = [{ sX: 0, sY: 0 },
+        { sX: 90, sY: 0 },
+        { sX: 183, sY: 0 },
+        { sX: 241, sY: 0 },
+    ]
+
     var interval, timeOut;
 
     var canvas = document.getElementById('game-container');
@@ -83,7 +91,6 @@ function DuelMode(gameState) {
     };
 
     this.draw = function() {
-        console.log(state.current);
         ctx.clearRect(0, 0, width, height);
         ctx.drawImage(duelBg, 0, sY, width, height, 0, 0, width, height);
         sX = currentFrame * 90;
@@ -95,12 +102,17 @@ function DuelMode(gameState) {
         if (state.current == state.getReady) {
             ctx.drawImage(readyBtn, 0, sY, 190, 75,
                 width / 2 - 50, blackSheep.y + 200, 110, 40);
+            ctx.font = "Bold 22px Ariel";
+            ctx.fillStyle = '#ececec';
+            ctx.fillText("Press Space Bar ", 80, 600);
+            ctx.fillText("Press Up Arrow ", 680, 600);
         }
 
-        if (state.current == state.set) {
-            ctx.drawImage(timer, 0, sY, 554, 140,
-                100, 200, 110, 40);
-        }
+        // if (state.current == state.set) {
+        //     var sX = currentFrame * 305;
+        //     ctx.drawImage(counter, sX, 0, 305, 141,
+        //         width / 2, height / 2, 305, 141);
+        // }
 
         if (state.current == state.over) {
             //game over
@@ -118,7 +130,13 @@ function DuelMode(gameState) {
         }
 
         if (state.current == state.set) {
-
+            var ticksPerFrameCount = 1000;
+            var tickCountTimer = 0;
+            tickCountTimer += 1;
+            if (tickCountTimer > ticksPerFrameCount) {
+                tickCountTimer = 0;
+                ctx.fillText("hello", 500, 500);
+            }
         }
     };
 

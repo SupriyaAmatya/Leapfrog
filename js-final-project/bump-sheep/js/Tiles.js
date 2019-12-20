@@ -36,8 +36,4 @@ function Tiles() {
     this.draw = function(ctx) {
         ctx.drawImage(tiles, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
     }
-
-    this.drawPlant = function() {
-        ctx.drawImage(buttonImg, that.sX, that.sY, 111, 93, that.x, that.y, that.width, that.height);
-    }
 }

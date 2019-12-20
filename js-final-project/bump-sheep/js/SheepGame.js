@@ -52,16 +52,16 @@ function SheepGame(gameState) {
     var alWhite = 0;
     var alBlack = 0;
     var barTimer = false;
-    var gameTime = 60; //seconds
+
+    var gameTime = 1 * 60 * 60; //seconds
 
     var timeOut;
-    var isGameOver = false;
-    var paused = false;
 
     this.whiteScore = 0;
     this.blackScore = 0;
 
     var that = this;
+    var modeSelection = document.getElementsByClassName('mode-selection')[0];
     var canvas = document.getElementById('game-container');
     var ctx = canvas.getContext('2d');
 
@@ -101,10 +101,6 @@ function SheepGame(gameState) {
                     }
                 }
             }
-            //pause button
-            if (clickX >= 405 && clickX <= 405 + 80 && clickY >= 0 && clickY <= 0 + 80) {
-                paused = true;
-            }
 
         });
     };
@@ -112,13 +108,13 @@ function SheepGame(gameState) {
     //game loop
     this.startGame = function() {
         ctx.clearRect(0, 0, width, height);
-
         that.renderMap();
-        // that.drawPlant();
         that.drawScore();
+
+        that.renderTime();
+
         that.createSheep();
         that.updateSheep();
-
         if (isBlackSheep) {
             that.updatePlayerSheep();
         }
@@ -128,18 +124,19 @@ function SheepGame(gameState) {
 
         that.drawButton();
         frame++;
-
-        timeOut = setTimeout(that.gameOver, 1000 * gameTime);
-        if (paused) {
-            ctx.drawImage(pause, 0, 0, width, height, 0, 0, width, height);
-            ctx.fillStyle = 'rgba(0,0,0, 0.3)';
-            ctx.fillRect(0, 0, width, height);
-            that.pauseOptions();
-            return
-        }
-
+        timeOut = setTimeout(that.gameOver, gameTime * 60);
         move = requestAnimationFrame(that.startGame);
     };
+
+    this.renderTime = function() {
+        ctx.font = 'bold 30px Arial';
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(Math.floor(gameTime / 60) + 's', 445, height - 615);
+        ctx.textAlign = 'center';
+        setTimeout(function() {
+            gameTime--;
+        }, 3000)
+    }
 
     this.drawScore = function() {
         ctx.drawImage(score, 0, 0, width, 112, 0, 0, width, 112);
@@ -153,9 +150,9 @@ function SheepGame(gameState) {
         ctx.fillText(that.whiteScore, width / 2 + 80, height - 610);
         ctx.textAlign = 'center';
 
-        ctx.font = "Bold 35px Helvetica";
+        ctx.font = "Bold 35px Arial";
         ctx.fillText("Player", 150, 660);
-        ctx.fillText("Computer", 780, 660);
+        ctx.fillText("Computer", 720, 660);
 
         that.progressBarWhite();
         that.progressBarBlack();
@@ -192,21 +189,14 @@ function SheepGame(gameState) {
                         tiles.tile4();
                         tiles.draw(ctx);
                         break;
-
-                    case 5:
-                        tiles.x = col * tileSize;
-                        tiles.y = row * tileSize;
-                        tiles.tile5();
-                        tiles.drawPlant(ctx);
-                        break;
                 }
             }
         }
     };
 
     this.drawButton = function() {
-        // ctx.drawImage(bushRight, 0, 0, 88, 565, width - 88, 103, 88, 565);
-        // ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
+        ctx.drawImage(bushRight, 0, 0, 88, 565, width - 88, 103, 88, 565);
+        ctx.drawImage(bushLeft, 0, 0, 88, 565, 0, 103, 88, 565);
 
         buttons.forEach(function(button) {
             button.draw();
@@ -218,16 +208,16 @@ function SheepGame(gameState) {
             temp = Math.floor(Math.random() * 10 + 1);
             sheep = new Sheep();
             if (temp >= 1 && temp <= 5) {
-                lane = sheep.init(canvas, 200, 50, 2);
+                lane = sheep.init(canvas, 200, 50, 1);
             }
             if (temp >= 6 && temp <= 8) {
-                lane = sheep.init(canvas, 320, 60, 4)
+                lane = sheep.init(canvas, 320, 60, 3)
             }
             if (temp == 9) {
-                lane = sheep.init(canvas, 360, 70, 6)
+                lane = sheep.init(canvas, 360, 70, 4)
             }
             if (temp == 10) {
-                lane = sheep.init(canvas, 400, 80, 8)
+                lane = sheep.init(canvas, 400, 80, 5)
             }
 
             //specifying Y position of white sheep
@@ -256,7 +246,7 @@ function SheepGame(gameState) {
                 sheeps[i][j].update();
 
                 //destroy sheep
-                if (sheeps[i][j].x <= 0) {
+                if (sheeps[i][j].x <= -100) {
                     that.whiteScore += 1;
                     for (var k = 0; k < collidedSheeps[i].length; k++) {
                         if (collidedSheeps[i][k] == sheeps[i][j]) {
@@ -264,6 +254,7 @@ function SheepGame(gameState) {
                         }
                     }
                     sheeps[i].splice(j, 1);
+                    playerSheeps[i] = [];
                 }
             }
         }
@@ -273,16 +264,16 @@ function SheepGame(gameState) {
         temp = Math.floor(Math.random() * 10 + 1);
         var btnPosY;
         if (temp >= 1 && temp <= 5) {
-            btnPosY = playerSheep.init(200, 50, 2);
+            btnPosY = playerSheep.init(200, 50, 1);
         }
         if (temp >= 6 && temp <= 8) {
-            btnPosY = playerSheep.init(320, 60, 4);
+            btnPosY = playerSheep.init(320, 60, 3);
         }
         if (temp == 9) {
-            btnPosY = playerSheep.init(360, 70, 6);
+            btnPosY = playerSheep.init(360, 70, 4);
         }
         if (temp == 10) {
-            btnPosY = playerSheep.init(400, 80, 8);
+            btnPosY = playerSheep.init(400, 80, 5);
         }
 
         //specifying Y position of black sheep
@@ -309,10 +300,9 @@ function SheepGame(gameState) {
             for (var j = 0; j < playerSheeps[i].length; j++) {
                 playerSheeps[i][j].draw(ctx);
                 playerSheeps[i][j].update();
-                // console.log(playerSheeps[i].length);
 
                 //destroy sheep
-                if (playerSheeps[i][j].x >= canvas.width) {
+                if (playerSheeps[i][j].x >= canvas.width + 100) {
                     that.blackScore += 1;
                     for (var k = 0; k < collidedSheeps[i].length; k++) {
                         if (collidedSheeps[i][k] == playerSheeps[i][j]) {
@@ -320,7 +310,7 @@ function SheepGame(gameState) {
                         }
                     }
                     playerSheeps[i].splice(j, 1);
-                    // console.log(playerSheeps[i][j]); 
+                    sheeps[i] = []
                 }
             }
         }
@@ -374,10 +364,6 @@ function SheepGame(gameState) {
                         for (var l = 0; l < collidedSheeps[i].length; l++) {
                             if (collidedSheeps[i][k] == collidedSheeps[i][l]) {
                                 isInCollidedSheeps = true;
-                                //not working!
-                                // if (collidedSheeps[i][l].x >= canvas.width) {
-                                //     collidedSheeps[i].splice(l, 1);
-                                // }
                             }
                         }
 
@@ -406,10 +392,6 @@ function SheepGame(gameState) {
                         for (var l = 0; l < collidedSheeps[i].length; l++) {
                             if (collidedSheeps[i][k] == collidedSheeps[i][l]) {
                                 isInCollidedSheeps = true;
-                                //not working!
-                                // if (collidedSheeps[i][l].x < 0) {
-                                //     collidedSheeps[i].splice(l, 1);
-                                // }
                             }
                         }
 
@@ -444,10 +426,8 @@ function SheepGame(gameState) {
             for (var j = 0; j < collidedSheeps[i].length; j++) {
                 if (collidedSheeps[i][j] == undefined)
                     return
-                    // console.log(collidedSheeps[i][j]);
                 if (collidedSheeps[i][j].playerSheep) {
                     if (collidedSheeps[i][j].x <= 0) {
-                        console.log(j);
                         collidedSheeps[i].splice(j, 1);
                     }
                 } else {
@@ -489,94 +469,31 @@ function SheepGame(gameState) {
         alBlack++;
     };
 
-    this.drawPlant = function() {
-        var sX = 0;
-        var sY = 0;
-        for (var i = 0; i < mapH; i++) {
-            for (var j = 0; j < mapW; j++) {
-                if (gameMap[i][j] == 1 && gameMap[i][j] == 3) {
-                    gameMap[i][j] == 5;
-                }
-            }
-        }
-    };
-
-    this.pauseOptions = function() {
-        canvas.addEventListener('click', function(event) {
-
-            var clickX = event.clientX;
-            var clickY = event.clientY;
-            //play button
-            if (clickX >= 196 && clickX <= 196 + 80 && clickY >= 213 && clickY <= 213 + 80) {
-                paused = false;
-                that.startGame();
-            }
-
-            //restart button
-            if (clickX >= 387 && clickX <= 387 + 80 && clickY >= 213 && clickY <= 213 + 80) {
-                paused = false;
-                that.restart();
-            }
-        })
-    };
-
-    this.restart = function() {
-        sheep = null
-        sheeps = [
-            [],
-            [],
-            [],
-            [],
-            []
-        ];
-        playerSheep = null;
-        playerSheeps = [
-            [],
-            [],
-            [],
-            [],
-            []
-        ];
-
-        collidedSheeps = [
-            [],
-            [],
-            [],
-            [],
-            []
-        ];
-        frame = 0;
-        alWhite = 0;
-        alBlack = 0;
-        that.whiteScore = 0;
-        that.blackScore = 0;
-        clearTimeout(timeOut);
-
-        that.init();
-    }
-
     this.gameOver = function() {
         window.cancelAnimationFrame(move);
-        isGameOver = true;
         clearTimeout(timeOut);
-        ctx.font = "Bold 50px Helvetica";
+        that.displayResult();
+    };
+
+    this.displayResult = function() {
+        ctx.font = "Bold 60px sans-serif";
+        ctx.fillStyle = '#ececec'
         ctx.fillText("Game Over!", width / 2, 150);
         ctx.textAlign = 'center';
 
-        if (that.whiteScore > that.blackScore) {
-            ctx.fillText("LOSE", 200, 400);
-            ctx.fillText("WIN", 780, 400);
-        } else if (that.whiteScore < that.blackScore) {
-            ctx.fillText("WIN", 200, 400);
-            ctx.fillText("LOSE", 780, 400);
-        } else {
-            ctx.fillText("DRAW", width / 2, 400);
-        }
+        ctx.drawImage(menu, 0, 0, 131, 110, width / 2 + 100, 500, 100, 100)
 
+        that.buttonsAction();
     };
 
+    this.buttonsAction = function() {
+        canvas.addEventListener('click', function(event) {
+            var clickX = event.clientX;
+            var clickY = event.clientY;
+            //menu button
+            if (clickX >= 548 && clickX <= 648 && clickY >= 500 && clickY <= 600) {
+                modeSelection.style.display = 'block';
+            }
+        });
+    };
 }
-
-
-// var game = new SheepGame();
-// game.init();

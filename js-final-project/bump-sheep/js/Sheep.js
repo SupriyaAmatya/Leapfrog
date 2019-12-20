@@ -29,9 +29,8 @@ function Sheep() {
         that.width = width / numberOfFrames;
         that.height = height;
         that.weight = weight;
-        that.x = canvas.width;
+        that.x = canvas.width + 100;
         that.y = that.getRandomPosition();
-        // that.y = 190;
         return that.y;
     };
 
@@ -53,19 +52,19 @@ function Sheep() {
     this.draw = function(ctx) {
 
         sX = currentFrame * that.width;
-        if (that.weight == 2) {
+        if (that.weight == 1) {
             ctx.drawImage(smallWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-        if (that.weight == 4) {
+        if (that.weight == 3) {
             ctx.drawImage(mediumWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-        if (that.weight == 6) {
+        if (that.weight == 4) {
             ctx.drawImage(largeWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }
-        if (that.weight == 8) {
+        if (that.weight == 5) {
             ctx.drawImage(superLargeWhiteSprite, sX, sY, that.width, that.height,
                 that.x, that.y, that.width, that.height);
         }

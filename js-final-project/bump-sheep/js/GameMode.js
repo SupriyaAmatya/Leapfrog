@@ -28,20 +28,14 @@ function GameMode() {
         //mode selection
         modeSelection = document.createElement('div');
         strategy = document.createElement('button');
-        resource = document.createElement('button');
-        duel = document.createElement('button');
         back = document.createElement('button');
 
         mainWrapper.appendChild(modeSelection);
         modeSelection.appendChild(strategy);
-        modeSelection.appendChild(resource);
-        modeSelection.appendChild(duel);
         modeSelection.appendChild(back);
 
         modeSelection.className = 'mode-selection';
         strategy.className = 'strategy-btn';
-        resource.className = 'resource-btn';
-        duel.className = 'duel-btn';
         back.className = 'back-btn';
 
         that.btnClickAction();
@@ -51,8 +45,6 @@ function GameMode() {
     this.btnClickAction = function() {
         playBtn.onclick = that.selectMode;
         strategy.onclick = that.strategyGame;
-        resource.onclick = that.resourceGame;
-        duel.onclick = that.duelGame;
         back.onclick = function() {
             modeSelection.style.display = 'none';
             startScreen.style.display = 'block';
@@ -67,22 +59,6 @@ function GameMode() {
         gameMode.current = gameMode.strategyMode;
         if (gameMode.current == gameMode.strategyMode) {
             var game = new SheepGame(gameMode);
-            game.init();
-        }
-    }
-    this.resourceGame = function() {
-        modeSelection.style.display = 'none';
-        gameMode.current = gameMode.resourceMode;
-        if (gameMode.current == gameMode.resourceMode) {
-            var game = new SheepGame(gameMode);
-            game.init();
-        }
-    }
-    this.duelGame = function() {
-        modeSelection.style.display = 'none';
-        gameMode.current = gameMode.duelMode;
-        if (gameMode.current == gameMode.duelMode) {
-            var game = new DuelMode(gameMode);
             game.init();
         }
     }
