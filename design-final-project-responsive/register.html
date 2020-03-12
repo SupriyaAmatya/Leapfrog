@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Market</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+</head>
+
+<body>
+    <div class="register-wrapper">
+        <div class="register">
+            <div class="register-content" id="register-content">
+                <div class="login-text">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <form class="register-form" id="register-form" onsubmit="return register();">
+                    <p class="title">Create account</p>
+                    <div class="form-control">
+                        <input type="text" placeholder="Your Name" id="name">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" placeholder="Your Email" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+
+
+                    <div class="form-control">
+                        <input type="text" placeholder="Your Mobile Number" id="mobile">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="password" placeholder="Password" id="password">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="password" placeholder="Confirm Password" id="cpassword">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+
+                    <input type="submit" value="SIGN UP">
+                    <p class="have-acc">
+                        Already have an account? <a href="index.html" id="login"> Log-in</a>
+                    </p>
+                </form>
+
+            </div>
+            <div class="successful" id="successful">
+                <div class="login-text">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <div class="content">
+                    <img src="images/success.png">
+                    <p>Your Account has been created! Go to your <a href="index.html">Home Page</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="top-footer-wrapper">
+            <div class="widgets-container container clearfix">
+                <div class="col digital-col">
+                    <h3>Digital</h3>
+                    <p>We're passionate about creating free and premium resources for professional community.</p>
+                    <p>Any questions? Email to info@digital.net</p>
+                </div>
+
+                <div class="col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col recent-post">
+                    <h3>Recent Posts</h3>
+                    <a href="#">
+                        <p>Tutorial: Isometric Actions and Icons in Illustrator</p>
+                        <span>12 Jan 2018</span>
+                    </a>
+                    <div class="sep"></div>
+                    <a href="#">
+                        <p>Where All Our Freebies Come From: True Story </p>
+                        <span>12 Jan 2017</span>
+                    </a>
+                </div>
+
+                <div class="col subscribe clearfix">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Sign up for our newsletter to receive the new releases directly to your inbox.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Your email address">
+                        <input type="submit" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-wrapper">
+            <div class="container bottom-footer clearfix">
+                <div class="copyright">
+                    <p>© Copyright 2018, Digital Market. All Rights Reserved. Designed by Niraj Thapa.</p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="images/fb-icon.png" alt="fb"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/twitter-icon.png" alt="twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/google-icon.png" alt="gplus"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/circle-icon.png" alt="pintrest"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/insta-icon.png" alt="insta"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/Register.js"></script>
+</body>
+
+</html>

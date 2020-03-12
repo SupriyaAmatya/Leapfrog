@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Market</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+</head>
+<body style="background-color: rgb(230, 233, 243);">
+    <header class="cart-header overlay">
+        <div class="overlay">
+            <div class="top-header clearfix">
+                <div class="top-header-center">
+                    <figure class="logo-wrapper">
+                        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    </figure>
+                    <div class="navbar-wrapper">
+                        <nav class="menu-nav">
+                            <ul>
+                                <li>
+                                    <a href="#home">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#about">About Us</a>
+                                </li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <nav class="login-nav">
+                            <ul>
+                                <li>
+                                    <figure class="basket-cart">
+                                        <a href="#">
+                                            <img src="images/basket-logo.png" alt="basket-icon">
+                                            <span class="cart-number">0</span>
+                                        </a>
+                                    </figure>
+            
+                                </li>
+                                <li class="login-btn"><a href="#" id="login-btn">LOGIN</a></li>
+                                <li class="user-name"><a href="#" id="user-name">Welcome 
+                                    <span>Testing</span>
+                                </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="search-div container">
+                <form action="#">
+                    <input type="text" placeholder="Search your keyword..." name="search">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section class="container main-shopping-cart clearfix">
+        <h1 class="cartTitle">Your Shopping Cart (<span>0</span> items)</h1>
+        <div class="shoppingCartWrapper shopping-cart">
+            <div class="fullWidth thHeading">
+                <span class="th-col first-col">PRODUCTS</span>
+                <span class="th-col">TOTAL PRICE</span>
+            </div>
+            <div class="products">
+                
+            </div>
+            <div class="clear-cart">
+                <button>Clear Cart</button>
+            </div>
+        </div>
+
+        <div class="shoppingCartRight floatLeft">
+
+        </div>
+        
+        
+    </section>
+
+    <footer>
+        <div class="top-footer-wrapper">
+            <div class="widgets-container container clearfix">
+                <div class="col digital-col">
+                    <h3>Digital</h3>
+                    <p>We're passionate about creating free and premium resources for professional community.</p>
+                    <p>Any questions? Email to info@digital.net</p>
+                </div>
+
+                <div class="col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col recent-post">
+                    <h3>Recent Posts</h3>
+                    <a href="#">
+                        <p>Tutorial: Isometric Actions and Icons in Illustrator</p>
+                        <span>12 Jan 2018</span>
+                    </a>
+                    <div class="sep"></div>
+                    <a href="#">
+                        <p>Where All Our Freebies Come From: True Story </p>
+                        <span>12 Jan 2017</span>
+                    </a>
+                </div>
+
+                <div class="col subscribe clearfix">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Sign up for our newsletter to receive the new releases directly to your inbox.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Your email address">
+                        <input type="submit" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-wrapper">
+            <div class="container bottom-footer clearfix">
+                <div class="copyright">
+                    <p>© Copyright 2018, Digital Market. All Rights Reserved. Designed by Niraj Thapa.</p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="images/fb-icon.png" alt="fb"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/twitter-icon.png" alt="twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/google-icon.png" alt="gplus"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/circle-icon.png" alt="pintrest"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/insta-icon.png" alt="insta"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="login-modal">
+        <div class="login-content">
+            <div class="login-text">
+                <!-- <img src="images/close.png" alt="close" class="close"> -->
+                <span class="close">X</span>
+                <img src="images/logo.png" alt="logo">
+                <p>Log into your account</p>
+            </div>
+            <figure class="logo">
+                <img src="images/user.png" alt="user">
+            </figure>
+
+            <form id="login-form">
+                <div class="form-control">
+                    <input type="text" placeholder="E-mail ID/Mobile number" id="user-email">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="password" placeholder="Password" id="user-password">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+
+                <input type="submit" value="Login">
+                <p class="not-registered">
+                    Not Registered? <a href="register.html">Create account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    
+    <script src="js/cart.js"></script>
+    <script src="js/Login.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+</html>
+

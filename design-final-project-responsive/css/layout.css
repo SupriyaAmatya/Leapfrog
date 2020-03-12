@@ -72,6 +72,19 @@
     margin: 10px;
 }
 
+
+/*  */
+
+.pagination {
+    padding: 3.75em 0em;
+    margin: 0px auto;
+    width: 31.875em;
+}
+
+.pagination ul {
+    float: left;
+}
+
 .pricing-table-wrapper {
     margin-top: 20px;
 }

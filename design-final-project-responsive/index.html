@@ -8,56 +8,71 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
 </head>
 
 <body>
     <header>
         <div class="overlay">
-            <div class="container">
-                <div class="top-header clearfix ">
+            <div class="top-header clearfix">
+                <div class="top-header-center">
                     <figure class="logo-wrapper">
                         <a href="#"><img src="images/logo.png" alt="logo"></a>
                     </figure>
                     <div class="navbar-wrapper">
                         <nav class="menu-nav">
-                            <ul class="main-menu">
-                                <li class="home-menu">
+                            <ul>
+                                <li>
                                     <a href="#">Home</a>
+                                </li>
+                                <li class="items-list"><a href="#all-items">All items</a>
                                     <div class="dropdown-content">
                                         <a href="#">Link 1</a>
                                         <a href="#">Link 2</a>
                                         <a href="#">Link 3</a>
                                     </div>
                                 </li>
-                                <li><a href="#">All items</a></li>
-                                <li><a href="#">Freebies</a></li>
-                                <li><a href="#">Premium</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="#freebies">Freebies</a></li>
+                                <li><a href="#premium">Premium</a></li>
+                                <li><a href="#blog">Blog</a></li>
                             </ul>
                         </nav>
                         <nav class="login-nav">
                             <ul>
                                 <li>
-
                                     <figure>
                                         <a href="#"><img src="images/search-icon.png" alt="search-icon"></a>
                                     </figure>
-
                                 </li>
                                 <li>
-
                                     <figure class="basket-cart">
-                                        <a href="#"><img src="images/basket-logo.png" alt="basket-icon"><span class="cart-number">0</span></a>
+                                        <a href="cart.html">
+                                            <img src="images/basket-logo.png" alt="basket-icon">
+                                            <span class="cart-number">0</span>
+                                        </a>
                                     </figure>
 
                                 </li>
-                                <li class="login"><a href="#">LOGIN</a></li>
+                                <li class="login-btn"><a href="#" id="login-btn">LOGIN</a></li>
+                                <li class="user-name"><a href="#" id="user-name">Welcome <span>Testing</span></a>
+                                    <div class="user-dropdown">
+                                        <a href="#">My Profile</a>
+                                        <a href="#">Submit Mockup</a>
+                                        <a href="#">Logout</a>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
+            </div>
+            <div class="container">
                 <div class="bottom-header">
                     <div class="heading">
                         <h1>Most Selective Market of Digital Products for Creatives.</h1>
@@ -65,7 +80,7 @@
                             Curated Design Resources to Energize Your Creat.
                         </p>
                     </div>
-                    <div class="product-btn">
+                    <div class="product-btn active">
                         <a href="#">View All Products</a>
                     </div>
                     <div class="product-btn">
@@ -93,13 +108,14 @@
 
                 </form>
             </div>
-            <div class="products-list clearfix">
+
+            <div id="all-items" class="products-list clearfix">
 
                 <div class="filter clearfix">
                     <span>Filter by</span>
                     <nav class="filter-nav">
                         <ul>
-                            <li><a href="#">All</a></li>
+                            <li><a href="#" class="active">All</a></li>
                             <li><a href="#">Art Design</a></li>
                             <li><a href="#">Graphic Design</a></li>
                             <li><a href="#">Identity Design</a></li>
@@ -118,18 +134,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -164,18 +180,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +211,7 @@
 
                                     </div>
                                     <div class="free-price">
-                                        <span>Free</span>
+                                        Free
                                     </div>
                                 </div>
                             </div>
@@ -210,18 +226,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +257,7 @@
 
                                     </div>
                                     <div class="price">
-                                        $<span>60.00</span>
+                                        $<span>15.00</span>
                                     </div>
                                 </div>
                             </div>
@@ -256,18 +272,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -316,18 +332,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +363,7 @@
 
                                     </div>
                                     <div class="price">
-                                        $<span>60.00</span>
+                                        $<span>50.00</span>
                                     </div>
                                 </div>
                             </div>
@@ -362,18 +378,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -408,18 +424,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -453,18 +469,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -499,18 +515,18 @@
                             <div class="mask-overlay">
                                 <div class="top-icon">
                                     <div class="download left-icon">
-                                        <a href=""><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
+                                        <a href="#"><img src="images/download-icon.png" alt="download"></a><span>4,4717</span>
                                     </div>
                                     <div class="like right-icon">
-                                        <a href=""><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
+                                        <a href="#"><img src="images/heart-icon.png" alt="heart"></a><span>50</span>
                                     </div>
                                 </div>
                                 <div class="middle-icon">
                                     <div class="eye left-icon">
-                                        <a href=""><img src="images/eye.png" alt="eye-icon"></a>
+                                        <a href="#"><img src="images/eye.png" alt="eye-icon"></a>
                                     </div>
                                     <div class="basket right-icon">
-                                        <a href=""><img src="images/basket-logo.png" alt="basket"></a>
+                                        <a href="#"><img src="images/basket-logo.png" alt="basket"></a>
                                     </div>
                                 </div>
                             </div>
@@ -539,13 +555,69 @@
                 </div>
             </div>
 
-            <div class="loading">
+            <!-- LIGHTBOX START -->
+            <div class="lightbox">
+                <div class="lightbox-content">
+                    <div class="lightbox-close">&times;</div>
+                    <h1 class="lightbox-heading"></h1>
+                    <div class="mockup">
+                        <div class="mockup-content">
+                            <figure class="mockup-media"><img src="" class="lightbox-img" alt="img"></figure>
+                            <div class="mockup-description">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="mockup-details">
+                            <div class="mockup-details-inner">
+                                <p class="price">Price: $<span>60</span>.00</p>
+                                <button class="buyNow"><span>BUY NOW</span></button>
+                                <button class="addToCart"><img src="images/addtocart.png" alt="img"><span>ADD TO CART</span></button>
+                                
+                                <div class="fileType">
+                                    <h4>File Type</h4>
+                                    <p>PSD</p>
+                                </div>
+                                <div class="share">
+                                    <h4>Share</h4>
+                                    <img src="images/fb.png">
+                                    <img src="images/twitter.png">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="lightbox-controls">
+                    <div class="left" onclick="prev()">
+                        <ion-icon name="chevron-back-outline"></ion-icon>    
+                    </div>
+                    <div class="right" onclick="next()">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </div> 
+                </div>
+            </div>
+            <!-- LIGHTBOX END -->
+
+            <!-- <div class="loading">
                 <figure>
                     <img src="images/loading.png" alt="loading">
                 </figure>
+            </div> -->
+            <div class="pagination ipad-only">
+                <span class="pre"><a href="#">Prev</a></span>
+                <ul class="clearfix">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li class="active"><a href="#">3</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">7</a></li>
+                </ul>
+                <span class="nxt"><a href="#">Next</a></span>
             </div>
 
-            <div class="pricing-table-wrapper">
+            <div id="premium" class="pricing-table-wrapper">
                 <div class="pricing-title">
                     <h1>
                         Our Pricing Plans
@@ -635,7 +707,7 @@
         </div>
     </div>
 
-    <div class="signup-wrapper">
+    <div id="freebies" class="signup-wrapper">
         <div class="container">
             <div class="center-container">
                 <div class="top-container">
@@ -653,7 +725,7 @@
         </div>
     </div>
 
-    <div class="testimonial-wrapper">
+    <div id="blog" class="testimonial-wrapper">
         <div class="container">
             <div class="section-title">
                 <h1>Testimonials</h1>
@@ -815,6 +887,51 @@
             </div>
         </div>
     </footer>
+
+    <!-- LOGIN -->
+
+    <div class="login-modal">
+        <div class="login-content">
+            <div class="login-text">
+                <!-- <img src="images/close.png" alt="close" class="close"> -->
+                <span class="close">X</span>
+                <img src="images/logo.png" alt="logo">
+                <p>Log into your account</p>
+            </div>
+            <figure class="logo">
+                <img src="images/user.png" alt="user">
+            </figure>
+
+            <form id="login-form" method="POST" action="">
+                <div class="form-control">
+                    <input type="text" placeholder="E-mail ID/Mobile number" id="user-email">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="password" placeholder="Password" id="user-password">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <input type="submit" value="Login">
+                <p class="not-registered">
+                    Not Registered? <a href="register.html">Create account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- REGISTER -->
+
+
+    <!-- <script src="js/Register.js"></script> -->
+    <script src="js/lightbox.js"></script>
+    <script src="js/Login.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 
 </html>

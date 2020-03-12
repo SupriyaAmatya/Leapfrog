@@ -1,0 +1,165 @@
+.lightbox{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox.open{
+    display: flex;
+}
+
+.lightbox .lightbox-content{
+    background-color: #fdfdfd;
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    border-radius:4px ;
+    position: relative;
+}
+.lightbox-content .lightbox-close{
+    position: absolute;
+    font-size: 34px;
+    z-index: 41;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    text-align: center;
+    line-height: 40px;
+    color: #0a3057b0;
+    cursor: pointer;
+}
+
+.lightbox-content .lightbox-close:hover{
+    color: #0a3057;
+}
+.lightbox-content .mockup{
+    display: flex;
+}
+
+.lightbox-heading{
+    margin: 30px 0 20px 0 ;
+    margin-left: 3%; 
+    color: #0a3057;
+    font-weight: 800;
+}
+
+.mockup .mockup-content{
+    width: 68%;
+    margin-left: 3%;
+}
+
+.mockup .mockup-content .mockup-media img{
+    width: 90%;
+    border-radius: 5px;
+}
+
+.mockup .mockup-content .mockup-description p{
+    margin: 2% 0;
+    width: 90%;
+    color: rgb(67, 71, 90);
+    font-size: 17px;
+    line-height: 1.45em;
+    padding: 10px 0 20px;
+}
+
+.mockup .mockup-details{
+    width: 30%;
+    padding: 0 2%;
+    border-radius: 4px;
+}
+
+.mockup-details .mockup-details-inner{
+    background-image: linear-gradient(135deg,#527af5,#39d0b5);
+    border-radius: 4px;
+    padding: 0 20px 20px;
+}
+
+.mockup-details-inner .price{
+    padding: 20px 0 10px;
+    color: #fdfdfd;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.mockup-details-inner button{
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 0;
+    margin: 10px 0;
+    background-color:#58cadf;
+    cursor: pointer;
+}
+
+.mockup-details-inner button span{
+    color: #fdfdfd;
+    font-size: 16px;
+    margin-left: 5px;
+    top: 10px;
+}
+
+.mockup-details-inner .addToCart:hover{
+    background-color:#3dc1d8;
+}
+
+.mockup-details-inner .buyNow{
+    padding: 16px 0;
+    background-color: #ee8e8e;
+}
+.mockup-details-inner .buyNow:hover{
+    background-color: #e46f6f;
+}
+
+.mockup-details-inner .fileType ,.mockup-details-inner .share{
+    color: #fdfdfd;
+    line-height: 1.65em;
+    margin: 20px 0;
+    padding: 5px 0;
+}
+
+.mockup-details-inner h4{
+    font-weight: 700;
+}
+
+.mockup-details-inner .share img{
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.lightbox .lightbox-controls div{
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    /* font-weight: 400; */
+    margin-top: -20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.lightbox .lightbox-controls div:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox .lightbox-controls div.left{
+    left: 50px;
+}
+.lightbox .lightbox-controls div.right{
+    right: 50px;
+}
+
+.lightbox-controls ion-icon{
+    color: #ececec;
+    height: 40px;
+}
