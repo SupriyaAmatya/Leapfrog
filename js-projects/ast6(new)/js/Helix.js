@@ -8,12 +8,14 @@ function Helix(canvas, ctx, row, col) {
 
     var circleArray = [];
 
-    this.x = 20;
+    this.x = 100;
     this.y = 80;
     this.gap = 30;
 
     this.init = function() {
-        that.generateCircles();
+        // that.drawCanvas();
+        that.generateCircles(false);
+        that.generateCircles(true);
         that.helixLoop();
     }
 
@@ -28,21 +30,22 @@ function Helix(canvas, ctx, row, col) {
 
     }
 
-    this.generateCircles = function() {
+    this.generateCircles = function(phase) {
         var currentPosY = this.y;
 
         for (var i = 0; i < this.row; i++) {
             currentPosY += that.gap;
 
-            var currentPosX = this.x;
+            var currentPosX = 0;
             var phaseIncrease = 5;
             var currentPhase = 0;
             for (var j = 0; j < this.col; j++) {
-                var circle = new Circle(ctx);
+                var circle = new Circle(ctx, phase);
                 circle.x = currentPosX += this.gap;
                 circle.y = currentPosY;
+                circle.currentX = currentPhase += phaseIncrease;
+                console.log('currX', circle.currentX);
                 circle.currentY = currentPosY;
-                circle.currentX = currentPosX;
 
                 circleArray.push(circle);
 
@@ -51,6 +54,7 @@ function Helix(canvas, ctx, row, col) {
     }
 
     this.helixLoop = function() {
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
         that.drawCanvas();
 
         for (var i = 0; i < circleArray.length; i++) {
@@ -69,4 +73,4 @@ var helix1 = new Helix(canvas1, ctx1, 10, 15).init();
 
 var canvas2 = document.getElementById('helix-container2');
 var ctx2 = canvas2.getContext('2d');
-var helix2 = new Helix(canvas2, ctx2, 4, 6).init();
+var helix2 = new Helix(canvas2, ctx2, 11, 11).init();
