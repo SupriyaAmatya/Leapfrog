@@ -1,11 +1,14 @@
 /* header-part */
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .header-top-container,
 .header-bottom-container {
     max-width: 1174px;
     height: 80px;
     margin: 0 auto;
-    padding: 0;
 }
 
 .logo-wrapper,
@@ -15,6 +18,7 @@
 }
 
 .header-navbar {
+    margin-top: 8px;
     float: right;
 }
 
